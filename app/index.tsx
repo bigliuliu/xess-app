@@ -11,7 +11,6 @@ export default function Index() {
         alignItems: 'center',
       }}
     >
-      <StatusBar style="light" />
       <Link href="/welcome">Welcome Page</Link>
     </View>
   )

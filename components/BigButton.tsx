@@ -1,12 +1,13 @@
-import { PropsWithChildren } from 'react'
-import { StyleSheet, Text, Pressable } from 'react-native'
+import { CSSProperties, PropsWithChildren } from 'react'
+import { StyleSheet, Text, Pressable, StyleProp } from 'react-native'
 
 export function BigButton({
   children,
   text,
-}: PropsWithChildren & { text: string }) {
+  buttonStyle,
+}: PropsWithChildren & { text: string; buttonStyle?: Object }) {
   return (
-    <Pressable style={styles.button}>
+    <Pressable style={[styles.button, buttonStyle || {}]}>
       <Text style={styles.text}>{text}</Text>
     </Pressable>
   )
