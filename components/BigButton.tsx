@@ -1,5 +1,5 @@
-import { CSSProperties, PropsWithChildren, useState } from 'react'
-import { StyleSheet, Text, Pressable, StyleProp } from 'react-native'
+import { PropsWithChildren, useState } from 'react'
+import { StyleSheet, Text, Pressable } from 'react-native'
 
 export function BigButton({
   children,

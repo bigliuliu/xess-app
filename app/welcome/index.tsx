@@ -1,5 +1,6 @@
 import { Text, View, Image, StyleSheet } from 'react-native'
 import { BigButton } from '@/components/BigButton'
+import { WhiteDrawerBackground } from '@/components/WhiteDrawerBackground'
 
 export default function Welcome() {
   return (
@@ -12,7 +13,9 @@ export default function Welcome() {
         <Text style={styles.subTitle}>The Future of Standalone Power</Text>
       </View>
 
-      <BigButton text="Start Now" buttonStyle={styles.startButtonStyle} />
+      <WhiteDrawerBackground>
+        <BigButton text="Start Now" buttonStyle={styles.startButtonStyle} />
+      </WhiteDrawerBackground>
     </View>
   )
 }
