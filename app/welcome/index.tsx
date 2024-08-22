@@ -46,6 +46,33 @@ export default function Welcome() {
       position: 'absolute',
       bottom: -550,
     },
+    bgRing1: {
+      width: 200,
+      height: 200,
+      borderRadius: 100,
+      borderWidth: 1,
+      borderColor: 'rgba(255, 255, 255, .03)',
+      position: 'absolute',
+      marginTop: -50,
+    },
+    bgRing2: {
+      width: 325,
+      height: 325,
+      borderRadius: 168,
+      borderWidth: 1,
+      borderColor: 'rgba(255, 255, 255, .02)',
+      position: 'absolute',
+      marginTop: -115,
+    },
+    bgRing3: {
+      width: 450,
+      height: 450,
+      borderRadius: 225,
+      borderWidth: 1,
+      borderColor: 'rgba(255, 255, 255, .01)',
+      position: 'absolute',
+      marginTop: -175,
+    },
   })
 
   return (
@@ -62,6 +89,11 @@ export default function Welcome() {
           style={styles.xessLogoImg}
         />
         <Text style={styles.subTitle}>The Future of Standalone Power</Text>
+
+        {/* bg rings */}
+        <View style={styles.bgRing1} />
+        <View style={styles.bgRing2} />
+        <View style={styles.bgRing3} />
       </View>
 
       <BigButton text="Start Now" buttonStyle={styles.startButtonStyle} />
