@@ -6,7 +6,7 @@ export default function RootLayout() {
   return (
     <>
       <StatusBar style="auto" />
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView style={{ flex: 1 }} edges={['top']}>
         <Slot />
       </SafeAreaView>
     </>
