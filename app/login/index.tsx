@@ -6,6 +6,7 @@ import { useStyles } from './useStyles'
 import { useForm, Controller } from 'react-hook-form'
 import { useState } from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons'
+import { Divider } from '@/components/Divider'
 
 export default function Welcome() {
   const insets = useSafeAreaInsets()
@@ -92,6 +93,8 @@ export default function Welcome() {
               },
             }}
           />
+
+          <Divider text="Or login with" />
         </View>
       </View>
     </View>
