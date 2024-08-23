@@ -50,6 +50,8 @@ export default function Welcome() {
                   spellCheck={false}
                   autoComplete="email"
                   inputMode="email"
+                  placeholder="hello@xess.com"
+                  placeholderTextColor="#d8d8d8"
                 />
               )
             }}
