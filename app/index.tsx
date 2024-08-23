@@ -1,8 +1,10 @@
-import { Text, View, Image, StyleSheet } from 'react-native'
-import { BigButton } from '@/components/BigButton'
+import { Text, View, Image, StyleSheet, Pressable } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { Link } from 'expo-router'
+import { useState } from 'react'
 
 export default function Welcome() {
+  const [isStartButtonPress, setIsStartButtonPress] = useState(false)
   const insets = useSafeAreaInsets()
   const safeAreaBottomHeight = insets.bottom
   const styles = StyleSheet.create({
@@ -73,6 +75,24 @@ export default function Welcome() {
       position: 'absolute',
       marginTop: -175,
     },
+    button: {
+      backgroundColor: '#000000',
+      width: 353,
+      height: 52,
+      borderRadius: 26,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: 16,
+      fontWeight: 500,
+      opacity: isStartButtonPress ? 0.5 : 1,
+      zIndex: 1,
+      position: 'absolute',
+      bottom: 16 + safeAreaBottomHeight,
+    },
+    text: {
+      color: '#ffffff',
+    },
   })
 
   return (
@@ -96,7 +116,17 @@ export default function Welcome() {
         <View style={styles.bgRing3} />
       </View>
 
-      <BigButton text="Start Now" buttonStyle={styles.startButtonStyle} />
+      <Link
+        href="/login"
+        asChild
+        style={styles.button}
+        onPressIn={() => setIsStartButtonPress(true)}
+        onPressOut={() => setIsStartButtonPress(false)}
+      >
+        <Pressable>
+          <Text style={styles.text}>Start Now</Text>
+        </Pressable>
+      </Link>
     </View>
   )
 }
