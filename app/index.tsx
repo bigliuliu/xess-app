@@ -1,7 +1,9 @@
-import { Text, View, Image, StyleSheet, Pressable } from 'react-native'
+import { Text, View, StyleSheet, Pressable } from 'react-native'
+import { Image } from 'expo-image'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Link } from 'expo-router'
 import { useState } from 'react'
+import { Logo } from '@/components/Logo'
 
 export default function Welcome() {
   const [isStartButtonPress, setIsStartButtonPress] = useState(false)
@@ -15,25 +17,11 @@ export default function Welcome() {
       backgroundColor: '#181818',
       position: 'relative',
     },
-    xessLogoImg: {
-      width: 247,
-      height: 50,
-      alignSelf: 'center',
-    },
     logoContainer: {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
       transform: [{ translateY: -130 }],
-      zIndex: 1,
-    },
-    subTitle: {
-      color: 'white',
-      marginTop: 16,
-      fontSize: 15,
-      lineHeight: 20,
-      fontWeight: 300,
-      letterSpacing: 1,
       zIndex: 1,
     },
     startButtonStyle: {
@@ -100,15 +88,12 @@ export default function Welcome() {
       <Image
         source={require('@/assets/images/white-bg-cut.png')}
         style={styles.whiteBgCut}
-        resizeMode="contain"
+        contentFit="contain"
+        cachePolicy="memory"
       />
 
       <View style={styles.logoContainer}>
-        <Image
-          source={require('@/assets/images/xess-logo.png')}
-          style={styles.xessLogoImg}
-        />
-        <Text style={styles.subTitle}>The Future of Standalone Power</Text>
+        <Logo />
 
         {/* bg rings */}
         <View style={styles.bgRing1} />
