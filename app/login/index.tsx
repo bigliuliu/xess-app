@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, TextInput } from 'react-native'
+import { Text, View, StyleSheet, TextInput, Pressable } from 'react-native'
 import { Image } from 'expo-image'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Logo } from '@/components/Logo'
@@ -100,6 +100,10 @@ export default function Welcome() {
 
           <GoogleLoginButton />
           <AppleLoginButton />
+
+          <Pressable style={styles.loginButton}>
+            <Text style={styles.loginButtonText}>Login</Text>
+          </Pressable>
         </View>
       </View>
     </View>

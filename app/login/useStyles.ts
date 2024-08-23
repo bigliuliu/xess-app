@@ -98,6 +98,22 @@ export const useStyles = () =>
         eyeIcon: {
           zIndex: 2,
         },
+        loginButton: {
+          width: 353,
+          height: 52,
+          borderRadius: 26,
+          lineHeight: 52,
+          backgroundColor: '#000',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginTop: 28,
+        },
+        loginButtonText: {
+          color: '#fff',
+          fontWeight: 600,
+          fontSize: 18,
+        },
       }),
     []
   )

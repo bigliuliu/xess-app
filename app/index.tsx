@@ -80,6 +80,8 @@ export default function Welcome() {
     },
     text: {
       color: '#ffffff',
+      fontWeight: 600,
+      fontSize: 18,
     },
   })
 
