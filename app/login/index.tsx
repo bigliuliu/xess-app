@@ -5,6 +5,7 @@ import { Logo } from '@/components/Logo'
 import { useStyles } from './useStyles'
 import { useForm, Controller } from 'react-hook-form'
 import { useState } from 'react'
+import Ionicons from '@expo/vector-icons/Ionicons'
 
 export default function Welcome() {
   const insets = useSafeAreaInsets()
@@ -70,8 +71,15 @@ export default function Welcome() {
                     style={styles.passwordInput}
                     spellCheck={false}
                     autoComplete="password"
-                    secureTextEntry={true}
                     textContentType="password"
+                    secureTextEntry={hidePass}
+                  />
+                  <Ionicons
+                    name={hidePass ? 'eye-off' : 'eye'}
+                    size={20}
+                    color="#333"
+                    style={styles.eyeIcon}
+                    onPress={() => setHidePass(!hidePass)}
                   />
                 </View>
               )
