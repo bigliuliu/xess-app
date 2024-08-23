@@ -19,8 +19,11 @@ export default function Welcome() {
     handleSubmit,
     formState: { errors },
   } = useForm()
-  const [data, setData] = useState(null)
   const [hidePass, setHidePass] = useState(true)
+
+  const onSubmit = (data: any) => {
+    console.log(data)
+  }
 
   return (
     <View style={styles.rootContainer}>
@@ -37,7 +40,14 @@ export default function Welcome() {
         <Text style={styles.loginText}>Login</Text>
 
         <View style={styles.formWrapper}>
-          <Text style={styles.emailLabel}>Your email address</Text>
+          <Text
+            style={[
+              styles.emailLabel,
+              !!errors?.email ? styles.emailLabelError : null,
+            ]}
+          >
+            Your email address {errors?.email && `(${errors?.email?.message})`}
+          </Text>
           <Controller
             name="email"
             control={control}
@@ -45,7 +55,10 @@ export default function Welcome() {
               return (
                 <TextInput
                   {...field}
-                  style={styles.emailInput}
+                  style={[
+                    styles.emailInput,
+                    !!errors?.email ? styles.emailInputError : null,
+                  ]}
                   keyboardType="email-address"
                   spellCheck={false}
                   autoComplete="email"
@@ -64,13 +77,25 @@ export default function Welcome() {
             }}
           />
 
-          <Text style={styles.passwordLabel}>Password</Text>
+          <Text
+            style={[
+              styles.passwordLabel,
+              errors?.password ? styles.passwordLabelError : null,
+            ]}
+          >
+            Password {errors?.password && `(${errors?.password?.message})`}
+          </Text>
           <Controller
             name="password"
             control={control}
             render={({ field }) => {
               return (
-                <View style={styles.passwordWrapper}>
+                <View
+                  style={[
+                    styles.passwordWrapper,
+                    errors?.password ? styles.passwordInputError : null,
+                  ]}
+                >
                   <TextInput
                     {...field}
                     style={styles.passwordInput}
@@ -103,7 +128,10 @@ export default function Welcome() {
           <GoogleLoginButton />
           <AppleLoginButton />
 
-          <Pressable style={styles.loginButton}>
+          <Pressable
+            style={styles.loginButton}
+            onPress={handleSubmit(onSubmit)}
+          >
             <Text style={styles.loginButtonText}>Login</Text>
           </Pressable>
         </View>

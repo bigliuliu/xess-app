@@ -55,6 +55,9 @@ export const useStyles = () =>
           marginBottom: 6,
           marginLeft: 6,
         },
+        emailLabelError: {
+          color: '#fb923c',
+        },
         emailInput: {
           width: 353,
           height: 42,
@@ -68,6 +71,9 @@ export const useStyles = () =>
           paddingLeft: 16,
           paddingRight: 16,
         },
+        emailInputError: {
+          borderColor: '#fb923c',
+        },
         passwordLabel: {
           width: 353,
           fontSize: 16,
@@ -75,6 +81,9 @@ export const useStyles = () =>
           marginBottom: 6,
           marginLeft: 6,
           marginTop: 20,
+        },
+        passwordLabelError: {
+          color: '#fb923c',
         },
         passwordWrapper: {
           width: 353,
@@ -94,6 +103,9 @@ export const useStyles = () =>
           color: '#333',
           paddingRight: 10,
           fontSize: 16,
+        },
+        passwordInputError: {
+          borderColor: '#fb923c',
         },
         eyeIcon: {
           zIndex: 2,
