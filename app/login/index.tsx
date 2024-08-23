@@ -8,6 +8,7 @@ import { useState } from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons'
 import { Divider } from '@/components/Divider'
 import { GoogleLoginButton } from '@/components/GoogleLoginButton'
+import { AppleLoginButton } from '@/components/AppleLoginButton'
 
 export default function Welcome() {
   const insets = useSafeAreaInsets()
@@ -98,6 +99,7 @@ export default function Welcome() {
           <Divider text="Or login with" />
 
           <GoogleLoginButton />
+          <AppleLoginButton />
         </View>
       </View>
     </View>
