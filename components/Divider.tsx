@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     position: 'relative',
-    marginTop: 20,
+    marginVertical: 20,
   },
   divider: {
     width: '100%',
