@@ -1,6 +1,5 @@
-import { Text, View, StyleSheet, TextInput, Pressable } from 'react-native'
+import { Text, View, TextInput, Pressable } from 'react-native'
 import { Image } from 'expo-image'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Logo } from '@/components/Logo'
 import { useStyles } from './useStyles'
 import { useForm, Controller } from 'react-hook-form'
@@ -12,8 +11,6 @@ import { AppleLoginButton } from '@/components/AppleLoginButton'
 import { Link } from 'expo-router'
 
 export default function Welcome() {
-  const insets = useSafeAreaInsets()
-  const safeAreaBottomHeight = insets.bottom
   const styles = useStyles()
   const {
     control,
