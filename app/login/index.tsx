@@ -9,6 +9,7 @@ import Ionicons from '@expo/vector-icons/Ionicons'
 import { Divider } from '@/components/Divider'
 import { GoogleLoginButton } from '@/components/GoogleLoginButton'
 import { AppleLoginButton } from '@/components/AppleLoginButton'
+import { Link } from 'expo-router'
 
 export default function Welcome() {
   const insets = useSafeAreaInsets()
@@ -134,6 +135,13 @@ export default function Welcome() {
           >
             <Text style={styles.loginButtonText}>Login</Text>
           </Pressable>
+
+          <Text style={styles.registerWrapper}>
+            Don't have an account?{' '}
+            <Link href="/register" style={styles.registerLink}>
+              Register
+            </Link>
+          </Text>
         </View>
       </View>
     </View>

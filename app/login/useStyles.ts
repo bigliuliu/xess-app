@@ -126,6 +126,15 @@ export const useStyles = () =>
           fontWeight: 600,
           fontSize: 18,
         },
+        registerWrapper: {
+          marginTop: 10,
+          fontSize: 16,
+          color: '#B8B8B8',
+        },
+        registerLink: {
+          color: '#000',
+          textDecorationLine: 'underline',
+        },
       }),
     []
   )
