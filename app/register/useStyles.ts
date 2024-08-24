@@ -74,6 +74,33 @@ export const useStyles = () =>
         usernameInputError: {
           borderColor: '#fb923c',
         },
+        emailLabel: {
+          width: 353,
+          fontSize: 16,
+          fontWeight: 500,
+          marginBottom: 6,
+          marginLeft: 6,
+          marginTop: 20,
+        },
+        emailLabelError: {
+          color: '#fb923c',
+        },
+        emailInput: {
+          width: 353,
+          height: 42,
+          borderRadius: 21,
+          borderColor: '#d8d8d8',
+          display: 'flex',
+          alignItems: 'center',
+          borderWidth: 1,
+          zIndex: 1,
+          fontSize: 16,
+          paddingLeft: 16,
+          paddingRight: 16,
+        },
+        emailInputError: {
+          borderColor: '#fb923c',
+        },
       }),
     []
   )

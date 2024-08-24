@@ -49,6 +49,43 @@ export default function Register() {
             }}
             rules={{
               required: 'This field is required',
+              minLength: {
+                value: 3,
+                message: 'Username must be at least 3 characters',
+              },
+            }}
+          />
+
+          <Text
+            style={[
+              styles.emailLabel,
+              !!errors?.email ? styles.emailLabelError : null,
+            ]}
+          >
+            Your email address {errors?.email && `(${errors?.email?.message})`}
+          </Text>
+          <Controller
+            name="email"
+            control={control}
+            render={({ field }) => {
+              return (
+                <TextInput
+                  {...field}
+                  style={[
+                    styles.emailInput,
+                    !!errors?.email ? styles.emailInputError : null,
+                  ]}
+                  keyboardType="email-address"
+                  spellCheck={false}
+                  autoComplete="email"
+                  inputMode="email"
+                  placeholder="hello@xess.com"
+                  placeholderTextColor="#d8d8d8"
+                />
+              )
+            }}
+            rules={{
+              required: 'This field is required',
               pattern: {
                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
                 message: 'Invalid email address',
