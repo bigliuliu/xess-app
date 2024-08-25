@@ -127,7 +127,7 @@ export const useStyles = () =>
           fontSize: 18,
         },
         registerWrapper: {
-          marginTop: 10,
+          marginTop: 16,
           fontSize: 16,
           color: '#B8B8B8',
         },

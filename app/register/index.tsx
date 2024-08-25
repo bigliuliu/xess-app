@@ -1,15 +1,27 @@
-import { View, Text, TextInput } from 'react-native'
+import { View, Text, TextInput, Pressable } from 'react-native'
 import { useStyles } from './useStyles'
 import { Image } from 'expo-image'
 import { useForm, Controller } from 'react-hook-form'
+import Ionicons from '@expo/vector-icons/Ionicons'
+import { useState } from 'react'
+import { Divider } from '@/components/Divider'
+import { GoogleLoginButton } from '@/components/GoogleLoginButton'
+import { AppleLoginButton } from '@/components/AppleLoginButton'
+import { Link } from 'expo-router'
 
 export default function Register() {
   const styles = useStyles()
   const {
+    watch,
     control,
     handleSubmit,
     formState: { errors },
   } = useForm()
+  const [hidePass, setHidePass] = useState(true)
+
+  const onSubmit = (data: any) => {
+    console.log(data)
+  }
 
   return (
     <View style={styles.rootContainer}>
@@ -93,7 +105,7 @@ export default function Register() {
             }}
           />
 
-          {/* <Text
+          <Text
             style={[
               styles.passwordLabel,
               errors?.password ? styles.passwordLabelError : null,
@@ -139,24 +151,70 @@ export default function Register() {
             }}
           />
 
-          <Divider text="Or login with" />
+          <Text
+            style={[
+              styles.confirmPasswordLabel,
+              errors?.confirmPassword ? styles.confirmPasswordLabelError : null,
+            ]}
+          >
+            Confirm password{' '}
+            {errors?.confirmPassword && `(${errors?.confirmPassword?.message})`}
+          </Text>
+          <Controller
+            name="confirmPassword"
+            control={control}
+            render={({ field }) => {
+              return (
+                <View
+                  style={[
+                    styles.confirmPasswordWrapper,
+                    errors?.confirmPassword
+                      ? styles.confirmPasswordInputError
+                      : null,
+                  ]}
+                >
+                  <TextInput
+                    {...field}
+                    style={styles.confirmPasswordInput}
+                    spellCheck={false}
+                    autoComplete="password"
+                    textContentType="password"
+                    secureTextEntry={hidePass}
+                  />
+                  <Ionicons
+                    name={hidePass ? 'eye-off' : 'eye'}
+                    size={20}
+                    color="#333"
+                    style={styles.eyeIcon}
+                    onPress={() => setHidePass(!hidePass)}
+                  />
+                </View>
+              )
+            }}
+            rules={{
+              validate: (value) =>
+                value === watch('password') || 'Passwords do not match',
+            }}
+          />
+
+          <Divider text="Or register with" />
 
           <GoogleLoginButton />
           <AppleLoginButton />
 
           <Pressable
-            style={styles.loginButton}
+            style={styles.registerButton}
             onPress={handleSubmit(onSubmit)}
           >
-            <Text style={styles.loginButtonText}>Login</Text>
+            <Text style={styles.registerButtonText}>Login</Text>
           </Pressable>
 
-          <Text style={styles.registerWrapper}>
-            Don't have an account?{' '}
-            <Link href="/register" style={styles.registerLink}>
-              Register
+          <Text style={styles.loginWrapper}>
+            Already have account?{' '}
+            <Link href="/login" style={styles.loginLink}>
+              Log in
             </Link>
-          </Text> */}
+          </Text>
         </View>
       </View>
     </View>
