@@ -49,10 +49,9 @@ export default function Welcome() {
           <Controller
             name="email"
             control={control}
-            render={({ field }) => {
+            render={({ field: { value, onChange, onBlur } }) => {
               return (
                 <TextInput
-                  {...field}
                   style={[
                     styles.emailInput,
                     !!errors?.email ? styles.emailInputError : null,
@@ -63,13 +62,16 @@ export default function Welcome() {
                   inputMode="email"
                   placeholder="hello@xess.com"
                   placeholderTextColor="#d8d8d8"
+                  value={value}
+                  onChangeText={onChange}
+                  onBlur={onBlur}
                 />
               )
             }}
             rules={{
               required: 'This field is required',
               pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
                 message: 'Invalid email address',
               },
             }}
@@ -86,7 +88,7 @@ export default function Welcome() {
           <Controller
             name="password"
             control={control}
-            render={({ field }) => {
+            render={({ field: { onChange, value, onBlur } }) => {
               return (
                 <View
                   style={[
@@ -95,12 +97,14 @@ export default function Welcome() {
                   ]}
                 >
                   <TextInput
-                    {...field}
                     style={styles.passwordInput}
                     spellCheck={false}
                     autoComplete="password"
                     textContentType="password"
                     secureTextEntry={hidePass}
+                    onChangeText={onChange}
+                    value={value}
+                    onBlur={onBlur}
                   />
                   <Ionicons
                     name={hidePass ? 'eye-off' : 'eye'}
