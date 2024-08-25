@@ -206,7 +206,7 @@ export default function Register() {
             style={styles.registerButton}
             onPress={handleSubmit(onSubmit)}
           >
-            <Text style={styles.registerButtonText}>Login</Text>
+            <Text style={styles.registerButtonText}>Register</Text>
           </Pressable>
 
           <Text style={styles.loginWrapper}>
