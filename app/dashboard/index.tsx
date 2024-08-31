@@ -5,6 +5,7 @@ import { Image } from 'expo-image'
 import { useStyles } from './useStyle'
 import { EnergySmallCard } from '@/components/EnergySmallCard'
 import { EnergyHorizontalCard } from '@/components/EnergyHorizontalCard'
+import { LinearGradient } from 'expo-linear-gradient'
 
 export default function Dashboard({}: PropsWithChildren) {
   const styles = useStyles()
@@ -53,6 +54,37 @@ export default function Dashboard({}: PropsWithChildren) {
 
         {/* title */}
         <Text style={styles.usageTitle}>Energy usage</Text>
+
+        {/* list */}
+        <View style={styles.systemListWrapper}>
+          <LinearGradient
+            // Background Linear Gradient
+            colors={['transparent', 'rgba(0,0,0,0.2)', 'transparent']}
+            start={[0, 0]}
+            end={[1, 0]}
+            style={styles.divider}
+          />
+          <View style={styles.listItemWrapper}>
+            <Image
+              source={require('@/assets/images/system-icons/Filled.png')}
+              style={styles.systemListIcon}
+              contentFit="contain"
+              cachePolicy="memory"
+            />
+            <View style={styles.listItemTitleWrapper}>
+              <Text>Energy</Text>
+              <Text style={styles.listItemSubTitle}>
+                80.5 kWh Generated Today
+              </Text>
+            </View>
+            <Image
+              source={require('@/assets/images/system-icons/right-arrow.png')}
+              style={styles.rightArrow}
+              contentFit="contain"
+              cachePolicy="memory"
+            />
+          </View>
+        </View>
       </View>
     </View>
   )

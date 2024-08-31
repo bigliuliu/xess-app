@@ -74,6 +74,46 @@ export const useStyles = () =>
           marginTop: 38,
           marginLeft: 24,
         },
+        systemListWrapper: {
+          width: 353,
+          height: 'auto',
+          display: 'flex',
+          flexDirection: 'column',
+          marginHorizontal: 20,
+        },
+        listItemWrapper: {
+          width: '100%',
+          height: 48,
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+        },
+        divider: {
+          width: '100%',
+          height: 1,
+          marginTop: 22,
+        },
+        systemListIcon: {
+          width: 24,
+          height: 24,
+        },
+        listItemTitleWrapper: {
+          display: 'flex',
+          flexDirection: 'column',
+          marginLeft: 8,
+          fontSize: 14,
+          color: '#000',
+          fontWeight: 500,
+        },
+        listItemSubTitle: {
+          color: 'rgba(143, 143, 143, 1)',
+          fontSize: 10,
+        },
+        rightArrow: {
+          marginLeft: 'auto',
+          width: 16,
+          height: 16,
+        },
       }),
     []
   )
