@@ -52,6 +52,16 @@ export const useStyles = () =>
           marginTop: 38,
           marginLeft: 24,
         },
+        notificationListWrapper: {
+          width: 353,
+          display: 'flex',
+          marginHorizontal: 20,
+          marginTop: 40,
+        },
+        divider: {
+          width: '100%',
+          height: 1,
+        },
       }),
     []
   )
