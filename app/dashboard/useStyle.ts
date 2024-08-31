@@ -39,6 +39,12 @@ export const useStyles = () =>
           top: 16,
           zIndex: 2,
         },
+        actualUsageWrapper: {
+          position: 'absolute',
+          top: 410,
+          left: 20,
+          zIndex: 2,
+        },
       }),
     []
   )

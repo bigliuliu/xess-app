@@ -4,6 +4,7 @@ import { Image } from 'expo-image'
 
 import { useStyles } from './useStyle'
 import { EnergySmallCard } from '@/components/EnergySmallCard'
+import { EnergyHorizontalCard } from '@/components/EnergyHorizontalCard'
 
 export default function Dashboard({}: PropsWithChildren) {
   const styles = useStyles()
@@ -35,6 +36,10 @@ export default function Dashboard({}: PropsWithChildren) {
           text="2.0 kW - 97%"
         />
         <EnergySmallCard status="up" title="Grid" text="1.8 kW" />
+      </View>
+
+      <View style={styles.actualUsageWrapper}>
+        <EnergyHorizontalCard status="up" title="Actual usage" text="1.8 kW" />
       </View>
     </View>
   )
