@@ -40,6 +40,18 @@ export default function RootLayout() {
               animation: 'slide_from_right',
             }}
           />
+          <Stack.Screen
+            name="dashboard/index"
+            options={{
+              animation: 'none',
+            }}
+          />
+          <Stack.Screen
+            name="notification/index"
+            options={{
+              animation: 'slide_from_right',
+            }}
+          />
         </Stack>
       </SafeAreaView>
     </>

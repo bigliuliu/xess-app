@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, Pressable } from 'react-native'
 import { PropsWithChildren } from 'react'
 import { Image } from 'expo-image'
 
@@ -6,9 +6,14 @@ import { useStyles } from './useStyle'
 import { EnergySmallCard } from '@/components/EnergySmallCard'
 import { EnergyHorizontalCard } from '@/components/EnergyHorizontalCard'
 import { LinearGradient } from 'expo-linear-gradient'
+import { router } from 'expo-router'
 
 export default function Dashboard({}: PropsWithChildren) {
   const styles = useStyles()
+
+  const handleGotoNotification = () => {
+    router.push('/notification')
+  }
 
   return (
     <View style={styles.rootContainer}>
@@ -20,12 +25,17 @@ export default function Dashboard({}: PropsWithChildren) {
         cachePolicy="memory"
       />
       {/* notification house */}
-      <Image
-        source={require('@/assets/images/notification_icon.png')}
-        style={styles.notificationIcon}
-        contentFit="contain"
-        cachePolicy="memory"
-      />
+      <Pressable
+        style={styles.notificationIconWrapper}
+        onPress={handleGotoNotification}
+      >
+        <Image
+          source={require('@/assets/images/notification_icon.png')}
+          style={styles.notificationIcon}
+          contentFit="contain"
+          cachePolicy="memory"
+        />
+      </Pressable>
 
       {/* energe panels */}
       <View style={styles.energyWrapper}>

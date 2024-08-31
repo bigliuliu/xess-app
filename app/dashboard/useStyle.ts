@@ -21,13 +21,17 @@ export const useStyles = () =>
           left: 13,
           zIndex: 1,
         },
-        notificationIcon: {
+        notificationIconWrapper: {
           width: 40,
           height: 40,
           position: 'absolute',
           top: 20,
           right: 20,
           zIndex: 2,
+        },
+        notificationIcon: {
+          width: '100%',
+          height: '100%',
         },
         energyWrapper: {
           display: 'flex',

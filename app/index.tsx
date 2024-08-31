@@ -85,6 +85,8 @@ export default function Welcome() {
     },
   })
 
+  return <Redirect href="/notification" />
+
   return (
     <View style={styles.rootContainer}>
       <Image
