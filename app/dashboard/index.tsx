@@ -3,6 +3,7 @@ import { PropsWithChildren } from 'react'
 import { Image } from 'expo-image'
 
 import { useStyles } from './useStyle'
+import { EnergySmallCard } from '@/components/EnergySmallCard'
 
 export default function Dashboard({}: PropsWithChildren) {
   const styles = useStyles()
@@ -23,6 +24,14 @@ export default function Dashboard({}: PropsWithChildren) {
         contentFit="contain"
         cachePolicy="memory"
       />
+
+      {/* energe panels */}
+      <View style={styles.energyWrapper}>
+        <EnergySmallCard />
+        <EnergySmallCard />
+        <EnergySmallCard />
+        <EnergySmallCard />
+      </View>
     </View>
   )
 }

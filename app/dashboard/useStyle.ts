@@ -29,6 +29,16 @@ export const useStyles = () =>
           right: 20,
           zIndex: 2,
         },
+        energyWrapper: {
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: 8,
+          position: 'absolute',
+          left: 20,
+          top: 16,
+          zIndex: 2,
+        },
       }),
     []
   )
