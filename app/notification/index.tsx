@@ -1,9 +1,32 @@
-import { Pressable, View } from 'react-native'
+import { Pressable, View, Text } from 'react-native'
 import { useStyles } from './useStyles'
 import { Image } from 'expo-image'
 import { router } from 'expo-router'
+import { PropsWithChildren } from 'react'
 
-export default function Notification() {
+interface NotificationProps {}
+
+const mockNotifications = [
+  {
+    type: 'info',
+    title: 'Account',
+    content: 'Your account has been created successfully',
+  },
+  {
+    type: 'info',
+    title: 'Change in Terms',
+    content: 'Our terms and conditions have been updated',
+  },
+  {
+    type: 'warning',
+    title: 'Change your password',
+    content: 'For security reasons, please change your password',
+  },
+]
+
+export default function Notification(
+  props: PropsWithChildren<NotificationProps>
+) {
   const styles = useStyles()
 
   const handleBack = () => {
@@ -22,6 +45,18 @@ export default function Notification() {
           cachePolicy="memory"
         />
       </Pressable>
+
+      <View style={styles.notificationWrapper}>
+        <Image
+          source={require('@/assets/images/white-bg-cut-2.png')}
+          style={styles.whiteBgCut}
+          contentFit="contain"
+          cachePolicy="memory"
+        />
+
+        {/* title */}
+        <Text style={styles.notiTitle}>Notification</Text>
+      </View>
     </View>
   )
 }
