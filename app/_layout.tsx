@@ -23,6 +23,12 @@ export default function RootLayout() {
             }}
           />
           <Stack.Screen
+            name="user/index"
+            options={{
+              animation: 'none',
+            }}
+          />
+          <Stack.Screen
             name="login/index"
             options={{
               animation: 'none',

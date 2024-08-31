@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Pressable } from 'react-native'
+import { View, Text, TextInput, Pressable, Alert, AppState } from 'react-native'
 import { useStyles } from './useStyles'
 import { Image } from 'expo-image'
 import { useForm, Controller } from 'react-hook-form'
@@ -7,7 +7,20 @@ import { useState } from 'react'
 import { Divider } from '@/components/Divider'
 import { GoogleLoginButton } from '@/components/GoogleLoginButton'
 import { AppleLoginButton } from '@/components/AppleLoginButton'
-import { Link } from 'expo-router'
+import { Link, router } from 'expo-router'
+import { supabase } from '@/lib/supabase'
+
+// Tells Supabase Auth to continuously refresh the session automatically if
+// the app is in the foreground. When this is added, you will continue to receive
+// `onAuthStateChange` events with the `TOKEN_REFRESHED` or `SIGNED_OUT` event
+// if the user's session is terminated. This should only be registered once.
+AppState.addEventListener('change', (state) => {
+  if (state === 'active') {
+    supabase.auth.startAutoRefresh()
+  } else {
+    supabase.auth.stopAutoRefresh()
+  }
+})
 
 export default function Register() {
   const styles = useStyles()
@@ -19,8 +32,37 @@ export default function Register() {
   } = useForm()
   const [hidePass, setHidePass] = useState(true)
 
-  const onSubmit = (data: any) => {
-    console.log(data)
+  const onSubmit = async (data: any) => {
+    // check if email is already registered
+    const { error: emailError, status } = await supabase
+      .from('profiles')
+      .select('email')
+      .eq('email', data.email)
+      .single()
+    if (status === 406 && emailError) {
+      Alert.alert('Email', 'Email is already registered')
+      return
+    }
+
+    const {
+      data: { session },
+      error,
+    } = await supabase.auth.signUp({
+      email: data.email,
+      password: data.password,
+      options: {
+        data: {
+          username: data.username,
+        },
+      },
+    })
+
+    if (error) {
+      Alert.alert('Error', error.message)
+      return
+    }
+    if (!session) Alert.alert('Please check your inbox for email confirmation')
+    router.back()
   }
 
   return (
@@ -47,15 +89,16 @@ export default function Register() {
           <Controller
             name="username"
             control={control}
-            render={({ field }) => {
+            render={({ field: { value, onChange } }) => {
               return (
                 <TextInput
-                  {...field}
                   style={[
                     styles.usernameInput,
                     !!errors?.username ? styles.usernameInputError : null,
                   ]}
                   spellCheck={false}
+                  value={value}
+                  onChangeText={onChange}
                 />
               )
             }}
@@ -79,20 +122,22 @@ export default function Register() {
           <Controller
             name="email"
             control={control}
-            render={({ field }) => {
+            render={({ field: { value, onChange } }) => {
               return (
                 <TextInput
-                  {...field}
                   style={[
                     styles.emailInput,
                     !!errors?.email ? styles.emailInputError : null,
                   ]}
+                  autoCapitalize="none"
                   keyboardType="email-address"
                   spellCheck={false}
                   autoComplete="email"
                   inputMode="email"
                   placeholder="hello@xess.com"
                   placeholderTextColor="#d8d8d8"
+                  value={value}
+                  onChangeText={onChange}
                 />
               )
             }}
@@ -116,7 +161,7 @@ export default function Register() {
           <Controller
             name="password"
             control={control}
-            render={({ field }) => {
+            render={({ field: { value, onChange } }) => {
               return (
                 <View
                   style={[
@@ -125,12 +170,13 @@ export default function Register() {
                   ]}
                 >
                   <TextInput
-                    {...field}
                     style={styles.passwordInput}
                     spellCheck={false}
                     autoComplete="password"
                     textContentType="password"
                     secureTextEntry={hidePass}
+                    value={value}
+                    onChangeText={onChange}
                   />
                   <Ionicons
                     name={hidePass ? 'eye-off' : 'eye'}
@@ -163,7 +209,7 @@ export default function Register() {
           <Controller
             name="confirmPassword"
             control={control}
-            render={({ field }) => {
+            render={({ field: { value, onChange } }) => {
               return (
                 <View
                   style={[
@@ -174,12 +220,13 @@ export default function Register() {
                   ]}
                 >
                   <TextInput
-                    {...field}
                     style={styles.confirmPasswordInput}
                     spellCheck={false}
                     autoComplete="password"
                     textContentType="password"
                     secureTextEntry={hidePass}
+                    value={value}
+                    onChangeText={onChange}
                   />
                   <Ionicons
                     name={hidePass ? 'eye-off' : 'eye'}

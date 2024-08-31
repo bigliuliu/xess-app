@@ -1,4 +1,4 @@
-import { Text, View, TextInput, Pressable } from 'react-native'
+import { Text, View, TextInput, Pressable, Alert } from 'react-native'
 import { Image } from 'expo-image'
 import { Logo } from '@/components/Logo'
 import { useStyles } from './useStyles'
@@ -8,7 +8,8 @@ import Ionicons from '@expo/vector-icons/Ionicons'
 import { Divider } from '@/components/Divider'
 import { GoogleLoginButton } from '@/components/GoogleLoginButton'
 import { AppleLoginButton } from '@/components/AppleLoginButton'
-import { Link } from 'expo-router'
+import { Link, router } from 'expo-router'
+import { supabase } from '@/lib/supabase'
 
 export default function Welcome() {
   const styles = useStyles()
@@ -19,8 +20,25 @@ export default function Welcome() {
   } = useForm()
   const [hidePass, setHidePass] = useState(true)
 
-  const onSubmit = (data: any) => {
-    console.log(data)
+  const onSubmit = async (data: any) => {
+    const {
+      data: { session },
+      error,
+    } = await supabase.auth.signInWithPassword({
+      email: data.email,
+      password: data.password,
+    })
+
+    if (error) {
+      Alert.alert('Error', error.message)
+      return
+    }
+    if (!session) {
+      Alert.alert('Error', 'Please check your email for confirmation')
+      return
+    }
+    supabase.auth.setSession(session)
+    router.replace('/user')
   }
 
   return (
@@ -56,6 +74,7 @@ export default function Welcome() {
                     styles.emailInput,
                     !!errors?.email ? styles.emailInputError : null,
                   ]}
+                  autoCapitalize="none"
                   keyboardType="email-address"
                   spellCheck={false}
                   autoComplete="email"

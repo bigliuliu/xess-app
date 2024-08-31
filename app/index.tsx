@@ -106,6 +106,7 @@ export default function Welcome() {
       <Link
         href="/login"
         asChild
+        replace
         style={styles.button}
         onPressIn={() => setIsStartButtonPress(true)}
         onPressOut={() => setIsStartButtonPress(false)}
