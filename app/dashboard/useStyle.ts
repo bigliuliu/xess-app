@@ -80,6 +80,7 @@ export const useStyles = () =>
           display: 'flex',
           flexDirection: 'column',
           marginHorizontal: 20,
+          marginTop: 22,
         },
         listItemWrapper: {
           width: '100%',
@@ -91,7 +92,6 @@ export const useStyles = () =>
         divider: {
           width: '100%',
           height: 1,
-          marginTop: 22,
         },
         systemListIcon: {
           width: 24,

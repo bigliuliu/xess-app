@@ -57,8 +57,8 @@ export default function Dashboard({}: PropsWithChildren) {
 
         {/* list */}
         <View style={styles.systemListWrapper}>
+          {/* Energy */}
           <LinearGradient
-            // Background Linear Gradient
             colors={['transparent', 'rgba(0,0,0,0.2)', 'transparent']}
             start={[0, 0]}
             end={[1, 0]}
@@ -76,6 +76,56 @@ export default function Dashboard({}: PropsWithChildren) {
               <Text style={styles.listItemSubTitle}>
                 80.5 kWh Generated Today
               </Text>
+            </View>
+            <Image
+              source={require('@/assets/images/system-icons/right-arrow.png')}
+              style={styles.rightArrow}
+              contentFit="contain"
+              cachePolicy="memory"
+            />
+          </View>
+
+          {/* System List */}
+          <LinearGradient
+            colors={['transparent', 'rgba(0,0,0,0.2)', 'transparent']}
+            start={[0, 0]}
+            end={[1, 0]}
+            style={styles.divider}
+          />
+          <View style={styles.listItemWrapper}>
+            <Image
+              source={require('@/assets/images/system-icons/Layer.png')}
+              style={styles.systemListIcon}
+              contentFit="contain"
+              cachePolicy="memory"
+            />
+            <View style={styles.listItemTitleWrapper}>
+              <Text>System List</Text>
+            </View>
+            <Image
+              source={require('@/assets/images/system-icons/right-arrow.png')}
+              style={styles.rightArrow}
+              contentFit="contain"
+              cachePolicy="memory"
+            />
+          </View>
+
+          {/* Settings */}
+          <LinearGradient
+            colors={['transparent', 'rgba(0,0,0,0.2)', 'transparent']}
+            start={[0, 0]}
+            end={[1, 0]}
+            style={styles.divider}
+          />
+          <View style={styles.listItemWrapper}>
+            <Image
+              source={require('@/assets/images/system-icons/Setting.png')}
+              style={styles.systemListIcon}
+              contentFit="contain"
+              cachePolicy="memory"
+            />
+            <View style={styles.listItemTitleWrapper}>
+              <Text>Settings</Text>
             </View>
             <Image
               source={require('@/assets/images/system-icons/right-arrow.png')}
