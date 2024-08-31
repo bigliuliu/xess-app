@@ -41,6 +41,19 @@ export default function Dashboard({}: PropsWithChildren) {
       <View style={styles.actualUsageWrapper}>
         <EnergyHorizontalCard status="up" title="Actual usage" text="1.8 kW" />
       </View>
+
+      {/* system list */}
+      <View style={styles.listWrapper}>
+        <Image
+          source={require('@/assets/images/white-bg-cut-2.png')}
+          style={styles.whiteBgCut}
+          contentFit="contain"
+          cachePolicy="memory"
+        />
+
+        {/* title */}
+        <Text style={styles.usageTitle}>Energy usage</Text>
+      </View>
     </View>
   )
 }
