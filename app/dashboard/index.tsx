@@ -27,14 +27,14 @@ export default function Dashboard({}: PropsWithChildren) {
 
       {/* energe panels */}
       <View style={styles.energyWrapper}>
-        <EnergySmallCard status="up" title="My house" text="4.7 kW" />
+        <EnergySmallCard status="down" title="My house" text="4.7 kW" />
         <EnergySmallCard status="up" title="Solar" text="5.7 kW" />
         <EnergySmallCard
           status="stable"
           title="Powerwall"
           text="2.0 kW - 97%"
         />
-        <EnergySmallCard status="down" title="Grid" text="1.8 kW" />
+        <EnergySmallCard status="up" title="Grid" text="1.8 kW" />
       </View>
     </View>
   )

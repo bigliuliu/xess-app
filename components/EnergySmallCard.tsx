@@ -1,5 +1,6 @@
 import { useMemo, PropsWithChildren } from 'react'
 import { View, StyleSheet, Text } from 'react-native'
+import { LinearGradient } from 'expo-linear-gradient'
 
 interface EnergySmallCardProps {
   status: 'up' | 'down' | 'stable'
@@ -11,10 +12,26 @@ export function EnergySmallCard(
   props: PropsWithChildren<EnergySmallCardProps>
 ) {
   const styles = useStyles()
+  const statusBarColor = useMemo(() => {
+    switch (props.status) {
+      case 'up':
+        return ['rgba(68, 253, 38, 1)', 'rgba(68, 253, 38, 0)']
+      case 'down':
+        return ['rgba(254, 203, 65, 0)', 'rgba(254, 203, 65, 1)']
+      default:
+        return ['rgba(145, 145, 145, 1)', 'rgba(145, 145, 145, 1)']
+    }
+  }, [props.status])
 
   return (
     <View style={styles.cardContainer}>
-      <View style={styles.statusBar}></View>
+      {/* status bar */}
+      <LinearGradient
+        colors={statusBarColor}
+        start={[0, 0]}
+        end={[0, 1]}
+        style={styles.statusBar}
+      />
       {/* content */}
       <View style={styles.contentWrapper}>
         <Text style={styles.contentTitle}>{props.title}</Text>
@@ -43,7 +60,6 @@ function useStyles() {
           width: 2,
           height: 25,
           borderRadius: 2,
-          backgroundColor: 'red',
         },
         contentWrapper: {
           display: 'flex',
