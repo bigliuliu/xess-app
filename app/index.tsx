@@ -1,8 +1,8 @@
 import { Text, View, StyleSheet, Pressable } from 'react-native'
 import { Image } from 'expo-image'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
-import { Link } from 'expo-router'
-import { useState } from 'react'
+import { Link, Redirect } from 'expo-router'
+import { useEffect, useState } from 'react'
 import { Logo } from '@/components/Logo'
 
 export default function Welcome() {
@@ -84,6 +84,8 @@ export default function Welcome() {
       fontSize: 18,
     },
   })
+
+  return <Redirect href="/dashboard" />
 
   return (
     <View style={styles.rootContainer}>

@@ -38,7 +38,7 @@ export default function Welcome() {
       return
     }
     supabase.auth.setSession(session)
-    router.replace('/user')
+    router.replace('/dashboard')
   }
 
   return (
