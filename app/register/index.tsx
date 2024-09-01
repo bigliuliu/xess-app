@@ -9,6 +9,7 @@ import { GoogleLoginButton } from '@/components/GoogleLoginButton'
 import { AppleLoginButton } from '@/components/AppleLoginButton'
 import { Link, router } from 'expo-router'
 import { supabase } from '@/lib/supabase'
+import { useLoadingStore } from '@/stores'
 
 // Tells Supabase Auth to continuously refresh the session automatically if
 // the app is in the foreground. When this is added, you will continue to receive
@@ -31,15 +32,18 @@ export default function Register() {
     formState: { errors },
   } = useForm()
   const [hidePass, setHidePass] = useState(true)
+  const { setLoading } = useLoadingStore()
 
   const onSubmit = async (data: any) => {
+    setLoading(true)
     // check if email is already registered
-    const { error: emailError, status } = await supabase
+    const { status, data: emailData } = await supabase
       .from('profiles')
       .select('email')
       .eq('email', data.email)
       .single()
-    if (status === 406 && emailError) {
+    if (status === 200 && emailData?.email === data.email) {
+      setLoading(false)
       Alert.alert('Email', 'Email is already registered')
       return
     }
@@ -56,6 +60,7 @@ export default function Register() {
         },
       },
     })
+    setLoading(false)
 
     if (error) {
       Alert.alert('Error', error.message)
