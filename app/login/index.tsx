@@ -10,6 +10,7 @@ import { GoogleLoginButton } from '@/components/GoogleLoginButton'
 import { AppleLoginButton } from '@/components/AppleLoginButton'
 import { Link, router } from 'expo-router'
 import { supabase } from '@/lib/supabase'
+import { useLoadingStore } from '@/stores'
 
 export default function Welcome() {
   const styles = useStyles()
@@ -19,8 +20,10 @@ export default function Welcome() {
     formState: { errors },
   } = useForm()
   const [hidePass, setHidePass] = useState(true)
+  const { setLoading } = useLoadingStore()
 
   const onSubmit = async (data: any) => {
+    setLoading(true)
     const {
       data: { session },
       error,
@@ -28,6 +31,7 @@ export default function Welcome() {
       email: data.email,
       password: data.password,
     })
+    setLoading(false)
 
     if (error) {
       Alert.alert('Error', error.message)

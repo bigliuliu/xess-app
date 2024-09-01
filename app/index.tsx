@@ -85,7 +85,7 @@ export default function Welcome() {
     },
   })
 
-  return <Redirect href="/dashboard" />
+  // return <Redirect href="/dashboard" />
 
   return (
     <View style={styles.rootContainer}>
