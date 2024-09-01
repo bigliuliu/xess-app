@@ -7,6 +7,7 @@ import { EnergySmallCard } from '@/components/EnergySmallCard'
 import { EnergyHorizontalCard } from '@/components/EnergyHorizontalCard'
 import { LinearGradient } from 'expo-linear-gradient'
 import { router } from 'expo-router'
+import { useLoadingStore } from '@/stores'
 
 export default function Dashboard({}: PropsWithChildren) {
   const styles = useStyles()

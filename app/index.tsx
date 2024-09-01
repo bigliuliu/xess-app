@@ -2,7 +2,7 @@ import { Text, View, StyleSheet, Pressable } from 'react-native'
 import { Image } from 'expo-image'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { Link, Redirect } from 'expo-router'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Logo } from '@/components/Logo'
 
 export default function Welcome() {
@@ -99,7 +99,6 @@ export default function Welcome() {
       <View style={styles.logoContainer}>
         <Logo />
 
-        {/* bg rings */}
         <View style={styles.bgRing1} />
         <View style={styles.bgRing2} />
         <View style={styles.bgRing3} />

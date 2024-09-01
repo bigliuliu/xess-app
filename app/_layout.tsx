@@ -1,12 +1,14 @@
 import { StatusBar } from 'expo-status-bar'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Stack } from 'expo-router'
+import { Spinner } from '@/components/Spinner'
 
 export default function RootLayout() {
   return (
     <>
       <StatusBar style="auto" />
       <SafeAreaView style={{ flex: 1 }} edges={['top']}>
+        <Spinner />
         <Stack
           screenOptions={{
             headerShown: false,
