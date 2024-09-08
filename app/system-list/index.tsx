@@ -26,7 +26,17 @@ export default function SystemList(props: PropsWithChildren<SystemListProps>) {
         />
       </Pressable>
 
-      <Text>System List</Text>
+      <View style={styles.systemListWrapper}>
+        <Image
+          source={require('@/assets/images/white-bg-cut-2.png')}
+          style={styles.whiteBgCut}
+          contentFit="contain"
+          cachePolicy="memory"
+        />
+
+        {/* title */}
+        <Text style={styles.systemListTitle}>System List</Text>
+      </View>
     </View>
   )
 }
