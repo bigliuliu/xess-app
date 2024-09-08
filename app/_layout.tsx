@@ -37,27 +37,9 @@ export default function RootLayout() {
             }}
           />
           <Stack.Screen
-            name="register/index"
-            options={{
-              animation: 'slide_from_right',
-            }}
-          />
-          <Stack.Screen
             name="dashboard/index"
             options={{
               animation: 'none',
-            }}
-          />
-          <Stack.Screen
-            name="notification/index"
-            options={{
-              animation: 'slide_from_right',
-            }}
-          />
-          <Stack.Screen
-            name="system-list/index"
-            options={{
-              animation: 'slide_from_right',
             }}
           />
         </Stack>

@@ -12,17 +12,12 @@ import { useCameraPermissions, CameraView } from 'expo-camera'
 import { Image } from 'expo-image'
 import { ProgressBar } from './ProgressBar'
 import { useStyles } from './styles/scan-qr.styles'
+import { BackButton } from './shared/BackButton'
 
 export default function ScanQR() {
   const styles = useStyles()
   const [permission, requestPermission] = useCameraPermissions()
   const [scanned, setScanned] = useState(false)
-
-  const handleBack = () => {
-    if (router.canGoBack()) {
-      router.back()
-    }
-  }
 
   const handleQRCodeScanned = ({ type, data }: any) => {
     setScanned(true)
@@ -71,15 +66,20 @@ export default function ScanQR() {
         source={require('@/assets/images/add-new-system/home-bg.jpg')}
         resizeMode="cover"
       >
+        <Pressable
+          style={{
+            position: 'absolute',
+            top: 20,
+            backgroundColor: 'red',
+            zIndex: 99,
+          }}
+          onPress={() => router.push('/add-new-system/gps')}
+        >
+          <Text>Next</Text>
+        </Pressable>
+
         <View style={styles.mask}>
-          <Pressable style={styles.backButtonWrapper} onPress={handleBack}>
-            <Image
-              source={require('@/assets/images/round_back_button.png')}
-              style={styles.backButton}
-              contentFit="contain"
-              cachePolicy="memory"
-            />
-          </Pressable>
+          <BackButton />
 
           <View style={styles.progressWrapper}>
             <ProgressBar progress={1} />

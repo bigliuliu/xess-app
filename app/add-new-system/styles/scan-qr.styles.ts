@@ -16,13 +16,6 @@ export const useStyles = () => {
           justifyContent: 'center',
           position: 'relative',
         },
-        backButtonWrapper: {
-          width: 40,
-          height: 40,
-          position: 'absolute',
-          top: 16,
-          left: 21,
-        },
         progressWrapper: {
           position: 'absolute',
           top: 72,
@@ -35,10 +28,6 @@ export const useStyles = () => {
           alignItems: 'center',
           justifyContent: 'center',
           backgroundColor: 'rgba(0, 0, 0, 0.3)',
-        },
-        backButton: {
-          width: '100%',
-          height: '100%',
         },
         cameraContainer: {
           width: 250,
