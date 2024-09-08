@@ -49,7 +49,7 @@ export const useStyles = () =>
           textAlign: 'left',
           zIndex: 1,
           height: 42,
-          marginTop: 38,
+          marginTop: 24,
           marginLeft: 24,
         },
         systemItemListWrapper: {

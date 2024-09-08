@@ -4,6 +4,8 @@ import { useStyles } from './useStyles'
 import { PropsWithChildren } from 'react'
 import { router } from 'expo-router'
 import { SystemItemCard } from './SystemItemCard'
+import { LinearGradient } from 'expo-linear-gradient'
+import { DividerLine } from '@/components/DividerLine'
 
 interface SystemListProps {}
 
@@ -75,6 +77,7 @@ export default function SystemList(props: PropsWithChildren<SystemListProps>) {
               />
             )
           })}
+          <DividerLine />
         </View>
       </View>
     </View>

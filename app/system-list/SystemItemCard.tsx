@@ -1,6 +1,7 @@
 import { PropsWithChildren } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 import { Image } from 'expo-image'
+import { DividerLine } from '@/components/DividerLine'
 
 interface SystemItemCardProps {
   id: string
@@ -14,26 +15,29 @@ export const SystemItemCard = (
   props: PropsWithChildren<SystemItemCardProps>
 ) => {
   return (
-    <View style={styles.cardWrapper}>
-      <Image
-        source={props.img}
-        style={styles.img}
-        contentFit="contain"
-        cachePolicy="memory"
-      />
+    <>
+      <DividerLine />
+      <View style={styles.cardWrapper}>
+        <Image
+          source={props.img}
+          style={styles.img}
+          contentFit="contain"
+          cachePolicy="memory"
+        />
 
-      <View style={styles.infoWrapper}>
-        <Text style={styles.titleText}>{props.title}</Text>
-        {props.power && <Text style={styles.powerText}>{props.power}</Text>}
-        <View style={styles.statusWrapper}>
-          {props.status === 'connected' ? (
-            <Text style={styles.connectedText}>Connected</Text>
-          ) : (
-            <Text style={styles.disconnectedText}>Disconnected</Text>
-          )}
+        <View style={styles.infoWrapper}>
+          <Text style={styles.titleText}>{props.title}</Text>
+          {props.power && <Text style={styles.powerText}>{props.power}</Text>}
+          <View style={styles.statusWrapper}>
+            {props.status === 'connected' ? (
+              <Text style={styles.connectedText}>Connected</Text>
+            ) : (
+              <Text style={styles.disconnectedText}>Disconnected</Text>
+            )}
+          </View>
         </View>
       </View>
-    </View>
+    </>
   )
 }
 
