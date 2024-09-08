@@ -1,10 +1,11 @@
 import { Pressable, View, Text } from 'react-native'
 import { useStyles } from './useStyles'
 import { Image } from 'expo-image'
-import { router } from 'expo-router'
 import { PropsWithChildren, useState } from 'react'
 import { NotificationItemProps, NotificationItem } from './NotificationItem'
 import { LinearGradient } from 'expo-linear-gradient'
+import { router } from 'expo-router'
+import { NoNotification } from './NoNotification'
 
 interface NotificationProps {}
 
@@ -63,7 +64,9 @@ export default function Notification(
         <Text style={styles.notiTitle}>Notification</Text>
 
         {/* notification list */}
-        {notifications.length === 0 ? null : (
+        {notifications.length === 0 ? (
+          <NoNotification />
+        ) : (
           <View style={styles.notificationListWrapper}>
             {notifications.map((notification, index) => {
               return (
