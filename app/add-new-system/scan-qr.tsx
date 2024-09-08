@@ -1,5 +1,5 @@
 import { router } from 'expo-router'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import {
   View,
   Text,
@@ -15,11 +15,27 @@ import { useStyles } from './styles/scan-qr.styles'
 export default function ScanQR() {
   const styles = useStyles()
   const [permission, requestPermission] = useCameraPermissions()
+  const [scanned, setScanned] = useState(false)
 
   const handleBack = () => {
     if (router.canGoBack()) {
       router.back()
     }
+  }
+
+  const handleQRCodeScanned = ({ type, data }: any) => {
+    setScanned(true)
+    // do something with the scanned data
+    Alert.alert('QR Code Scanned', String(data), [
+      {
+        text: 'Next',
+        onPress: () => {
+          setScanned(false)
+          // only navigate for now
+          router.push('/add-new-system/gps')
+        },
+      },
+    ])
   }
 
   // ask for permission if not granted, open settings if not granted and can't ask again
@@ -64,7 +80,14 @@ export default function ScanQR() {
             />
           </Pressable>
 
-          <CameraView facing="back" style={styles.cameraContainer}>
+          <CameraView
+            facing="back"
+            style={styles.cameraContainer}
+            barcodeScannerSettings={{
+              barcodeTypes: ['qr'],
+            }}
+            onBarcodeScanned={scanned ? undefined : handleQRCodeScanned}
+          >
             <Image
               source={require('@/assets/images/add-new-system/scan-frame.png')}
               style={styles.scanImg}
