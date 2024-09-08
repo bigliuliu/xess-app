@@ -1,0 +1,65 @@
+Date : 2024-09-08 20:54:17
+Directory : /Users/chrisyu/Desktop/upworks/xess/xess-expo/app
+Total : 29 files,  2129 codes, 23 comments, 146 blanks, all 2298 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| TypeScript JSX |         21 |      1,363 |         23 |        128 |      1,514 |
+| TypeScript     |          8 |        766 |          0 |         18 |        784 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                      | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                         |         29 |      2,129 |         23 |        146 |      2,298 |
+| . (Files)                                                                                 |          2 |        163 |          2 |          9 |        174 |
+| add-new-system                                                                            |         12 |        393 |          4 |         45 |        442 |
+| add-new-system (Files)                                                                    |          9 |        249 |          4 |         36 |        289 |
+| add-new-system/shared                                                                     |          1 |         33 |          0 |          4 |         37 |
+| add-new-system/styles                                                                     |          2 |        111 |          0 |          5 |        116 |
+| dashboard                                                                                 |          2 |        239 |          9 |         14 |        262 |
+| login                                                                                     |          2 |        300 |          0 |         15 |        315 |
+| notification                                                                              |          5 |        299 |          2 |         22 |        323 |
+| register                                                                                  |          2 |        453 |          5 |         18 |        476 |
+| system-list                                                                               |          3 |        262 |          1 |         18 |        281 |
+| user                                                                                      |          1 |         20 |          0 |          5 |         25 |
++-------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                  | language       | code       | comment    | blank      | total      |
++-------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/_layout.tsx                             | TypeScript JSX |         48 |          0 |          2 |         50 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/ProgressBar.tsx          | TypeScript JSX |         45 |          0 |          5 |         50 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/done.tsx                 | TypeScript JSX |          9 |          0 |          2 |         11 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/gps.tsx                  | TypeScript JSX |         38 |          0 |          8 |         46 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/owner.tsx                | TypeScript JSX |          6 |          0 |          2 |          8 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/photo.tsx                | TypeScript JSX |         15 |          0 |          3 |         18 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/review.tsx               | TypeScript JSX |          9 |          0 |          2 |         11 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/scan-qr.tsx              | TypeScript JSX |         97 |          4 |          8 |        109 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/shared/BackButton.tsx    | TypeScript JSX |         33 |          0 |          4 |         37 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/styles/gps.styles.ts     | TypeScript     |         49 |          0 |          3 |         52 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/styles/scan-qr.styles.ts | TypeScript     |         62 |          0 |          2 |         64 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/system-check.tsx         | TypeScript JSX |         15 |          0 |          3 |         18 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/xs-one-setting.tsx       | TypeScript JSX |         15 |          0 |          3 |         18 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/dashboard/index.tsx                     | TypeScript JSX |        121 |          9 |         12 |        142 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/dashboard/useStyle.ts                   | TypeScript     |        118 |          0 |          2 |        120 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/index.tsx                               | TypeScript JSX |        115 |          2 |          7 |        124 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/login/index.tsx                         | TypeScript JSX |        161 |          0 |         13 |        174 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/login/useStyles.ts                      | TypeScript     |        139 |          0 |          2 |        141 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/notification/NoNotification.tsx         | TypeScript JSX |         45 |          0 |          4 |         49 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/notification/NotificationItem.style.ts  | TypeScript     |         47 |          0 |          2 |         49 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/notification/NotificationItem.tsx       | TypeScript JSX |         60 |          0 |          5 |         65 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/notification/index.tsx                  | TypeScript JSX |         85 |          2 |          9 |         96 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/notification/useStyles.ts               | TypeScript     |         62 |          0 |          2 |         64 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/register/index.tsx                      | TypeScript JSX |        254 |          5 |         16 |        275 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/register/useStyles.ts                   | TypeScript     |        199 |          0 |          2 |        201 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/system-list/SystemItemCard.tsx          | TypeScript JSX |         84 |          0 |          5 |         89 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/system-list/index.tsx                   | TypeScript JSX |         88 |          1 |         10 |         99 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/system-list/useStyles.ts                | TypeScript     |         90 |          0 |          3 |         93 |
+| /Users/chrisyu/Desktop/upworks/xess/xess-expo/app/user/index.tsx                          | TypeScript JSX |         20 |          0 |          5 |         25 |
+| Total                                                                                     |                |      2,129 |         23 |        146 |      2,298 |
++-------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+

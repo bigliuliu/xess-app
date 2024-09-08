@@ -1,0 +1,31 @@
+"filename", "language", "TypeScript JSX", "TypeScript", "comment", "blank", "total"
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/_layout.tsx", "TypeScript JSX", 48, 0, 0, 2, 50
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/ProgressBar.tsx", "TypeScript JSX", 45, 0, 0, 5, 50
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/done.tsx", "TypeScript JSX", 9, 0, 0, 2, 11
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/gps.tsx", "TypeScript JSX", 38, 0, 0, 8, 46
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/owner.tsx", "TypeScript JSX", 6, 0, 0, 2, 8
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/photo.tsx", "TypeScript JSX", 15, 0, 0, 3, 18
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/review.tsx", "TypeScript JSX", 9, 0, 0, 2, 11
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/scan-qr.tsx", "TypeScript JSX", 97, 0, 4, 8, 109
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/shared/BackButton.tsx", "TypeScript JSX", 33, 0, 0, 4, 37
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/styles/gps.styles.ts", "TypeScript", 0, 49, 0, 3, 52
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/styles/scan-qr.styles.ts", "TypeScript", 0, 62, 0, 2, 64
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/system-check.tsx", "TypeScript JSX", 15, 0, 0, 3, 18
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/add-new-system/xs-one-setting.tsx", "TypeScript JSX", 15, 0, 0, 3, 18
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/dashboard/index.tsx", "TypeScript JSX", 121, 0, 9, 12, 142
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/dashboard/useStyle.ts", "TypeScript", 0, 118, 0, 2, 120
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/index.tsx", "TypeScript JSX", 115, 0, 2, 7, 124
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/login/index.tsx", "TypeScript JSX", 161, 0, 0, 13, 174
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/login/useStyles.ts", "TypeScript", 0, 139, 0, 2, 141
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/notification/NoNotification.tsx", "TypeScript JSX", 45, 0, 0, 4, 49
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/notification/NotificationItem.style.ts", "TypeScript", 0, 47, 0, 2, 49
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/notification/NotificationItem.tsx", "TypeScript JSX", 60, 0, 0, 5, 65
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/notification/index.tsx", "TypeScript JSX", 85, 0, 2, 9, 96
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/notification/useStyles.ts", "TypeScript", 0, 62, 0, 2, 64
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/register/index.tsx", "TypeScript JSX", 254, 0, 5, 16, 275
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/register/useStyles.ts", "TypeScript", 0, 199, 0, 2, 201
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/system-list/SystemItemCard.tsx", "TypeScript JSX", 84, 0, 0, 5, 89
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/system-list/index.tsx", "TypeScript JSX", 88, 0, 1, 10, 99
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/system-list/useStyles.ts", "TypeScript", 0, 90, 0, 3, 93
+"/Users/chrisyu/Desktop/upworks/xess/xess-expo/app/user/index.tsx", "TypeScript JSX", 20, 0, 0, 5, 25
+"Total", "-", 1363, 766, 23, 146, 2298
