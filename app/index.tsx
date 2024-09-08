@@ -85,8 +85,9 @@ export default function Welcome() {
     },
   })
 
+  return <Redirect href="/add-new-system/scan-qr" />
   // return <Redirect href="/dashboard" />
-  return <Redirect href="/system-list" />
+  // return <Redirect href="/system-list" />
 
   return (
     <View style={styles.rootContainer}>
