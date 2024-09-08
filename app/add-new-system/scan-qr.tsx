@@ -64,7 +64,14 @@ export default function ScanQR() {
             />
           </Pressable>
 
-          <CameraView facing="back" style={styles.cameraContainer}></CameraView>
+          <CameraView facing="back" style={styles.cameraContainer}>
+            <Image
+              source={require('@/assets/images/add-new-system/scan-frame.png')}
+              style={styles.scanImg}
+              contentFit="contain"
+              cachePolicy="memory"
+            />
+          </CameraView>
           <Text style={styles.scanCodeText}>Scan your device QR code</Text>
         </View>
       </ImageBackground>

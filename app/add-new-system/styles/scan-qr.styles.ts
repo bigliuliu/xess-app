@@ -36,9 +36,9 @@ export const useStyles = () => {
           height: '100%',
         },
         cameraContainer: {
-          width: 300,
-          height: 300,
-          borderRadius: 20,
+          width: 250,
+          height: 250,
+          borderRadius: 42,
           overflow: 'hidden',
         },
         scanCodeText: {
@@ -53,6 +53,15 @@ export const useStyles = () => {
           fontSize: 14,
           fontWeight: 500,
           marginTop: 16,
+        },
+        scanImg: {
+          width: 304,
+          height: 304,
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: [{ translateX: -152 }, { translateY: -152 }],
+          zIndex: 2,
         },
       }),
     []
