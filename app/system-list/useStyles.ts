@@ -52,6 +52,12 @@ export const useStyles = () =>
           marginTop: 38,
           marginLeft: 24,
         },
+        systemItemListWrapper: {
+          display: 'flex',
+          flexDirection: 'column',
+          marginLeft: 24,
+          marginTop: 38,
+        },
       }),
     []
   )
