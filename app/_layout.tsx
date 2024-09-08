@@ -54,6 +54,12 @@ export default function RootLayout() {
               animation: 'slide_from_right',
             }}
           />
+          <Stack.Screen
+            name="system-list/index"
+            options={{
+              animation: 'slide_from_right',
+            }}
+          />
         </Stack>
       </SafeAreaView>
     </>

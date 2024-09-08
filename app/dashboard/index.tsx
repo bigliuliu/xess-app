@@ -14,6 +14,9 @@ export default function Dashboard({}: PropsWithChildren) {
   const handleGotoNotification = () => {
     router.push('/notification')
   }
+  const handleGotoSystemList = () => {
+    router.push('/system-list')
+  }
 
   return (
     <View style={styles.rootContainer}>
@@ -102,23 +105,25 @@ export default function Dashboard({}: PropsWithChildren) {
             end={[1, 0]}
             style={styles.divider}
           />
-          <View style={styles.listItemWrapper}>
-            <Image
-              source={require('@/assets/images/system-icons/Layer.png')}
-              style={styles.systemListIcon}
-              contentFit="contain"
-              cachePolicy="memory"
-            />
-            <View style={styles.listItemTitleWrapper}>
-              <Text>System List</Text>
+          <Pressable onPress={handleGotoSystemList}>
+            <View style={styles.listItemWrapper}>
+              <Image
+                source={require('@/assets/images/system-icons/Layer.png')}
+                style={styles.systemListIcon}
+                contentFit="contain"
+                cachePolicy="memory"
+              />
+              <View style={styles.listItemTitleWrapper}>
+                <Text>System List</Text>
+              </View>
+              <Image
+                source={require('@/assets/images/system-icons/right-arrow.png')}
+                style={styles.rightArrow}
+                contentFit="contain"
+                cachePolicy="memory"
+              />
             </View>
-            <Image
-              source={require('@/assets/images/system-icons/right-arrow.png')}
-              style={styles.rightArrow}
-              contentFit="contain"
-              cachePolicy="memory"
-            />
-          </View>
+          </Pressable>
 
           {/* Settings */}
           <LinearGradient
