@@ -17,7 +17,7 @@ export default function SystemSetting() {
           backgroundColor: 'red',
           zIndex: 99,
         }}
-        onPress={() => router.push('/add-new-system/review')}
+        onPress={() => router.push('/add-new-system/done')}
       >
         <Text>Next</Text>
       </Pressable>

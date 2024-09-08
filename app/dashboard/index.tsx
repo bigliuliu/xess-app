@@ -1,5 +1,5 @@
 import { View, Text, Pressable } from 'react-native'
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren, useEffect } from 'react'
 import { Image } from 'expo-image'
 
 import { useStyles } from './useStyle'
@@ -17,6 +17,13 @@ export default function Dashboard({}: PropsWithChildren) {
   const handleGotoSystemList = () => {
     router.push('/system-list')
   }
+
+  // clear all router history if possible
+  useEffect(() => {
+    if (router.canDismiss()) {
+      router.dismissAll()
+    }
+  }, [])
 
   return (
     <View style={styles.rootContainer}>

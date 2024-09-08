@@ -37,9 +37,7 @@ export default function SystemList(props: PropsWithChildren<SystemListProps>) {
   ]
 
   const handleBack = () => {
-    if (router.canGoBack()) {
-      router.back()
-    }
+    router.replace('/dashboard')
   }
   const handleAddNewSystem = () => {
     router.push('/add-new-system/scan-qr')
