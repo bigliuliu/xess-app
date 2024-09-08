@@ -3,9 +3,9 @@ import { useStyles } from './useStyles'
 import { Image } from 'expo-image'
 import { PropsWithChildren, useState } from 'react'
 import { NotificationItemProps, NotificationItem } from './NotificationItem'
-import { LinearGradient } from 'expo-linear-gradient'
 import { router } from 'expo-router'
 import { NoNotification } from './NoNotification'
+import { DividerLine } from '@/components/DividerLine'
 
 interface NotificationProps {}
 
@@ -71,12 +71,7 @@ export default function Notification(
             {notifications.map((notification, index) => {
               return (
                 <View key={index}>
-                  <LinearGradient
-                    colors={['transparent', 'rgba(0,0,0,0.2)', 'transparent']}
-                    start={[0, 0]}
-                    end={[1, 0]}
-                    style={styles.divider}
-                  />
+                  <DividerLine />
                   <NotificationItem
                     key={index}
                     type={notification.type}
@@ -91,12 +86,7 @@ export default function Notification(
                 </View>
               )
             })}
-            <LinearGradient
-              colors={['transparent', 'rgba(0,0,0,0.2)', 'transparent']}
-              start={[0, 0]}
-              end={[1, 0]}
-              style={styles.divider}
-            />
+            <DividerLine />
           </View>
         )}
       </View>

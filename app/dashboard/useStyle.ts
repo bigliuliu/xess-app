@@ -93,10 +93,6 @@ export const useStyles = () =>
           flexDirection: 'row',
           alignItems: 'center',
         },
-        divider: {
-          width: '100%',
-          height: 1,
-        },
         systemListIcon: {
           width: 24,
           height: 24,

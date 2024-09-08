@@ -58,10 +58,6 @@ export const useStyles = () =>
           marginHorizontal: 20,
           marginTop: 40,
         },
-        divider: {
-          width: '100%',
-          height: 1,
-        },
       }),
     []
   )

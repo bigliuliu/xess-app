@@ -5,8 +5,8 @@ import { Image } from 'expo-image'
 import { useStyles } from './useStyle'
 import { EnergySmallCard } from '@/components/EnergySmallCard'
 import { EnergyHorizontalCard } from '@/components/EnergyHorizontalCard'
-import { LinearGradient } from 'expo-linear-gradient'
 import { router } from 'expo-router'
+import { DividerLine } from '@/components/DividerLine'
 
 export default function Dashboard({}: PropsWithChildren) {
   const styles = useStyles()
@@ -71,12 +71,7 @@ export default function Dashboard({}: PropsWithChildren) {
         {/* list */}
         <View style={styles.systemListWrapper}>
           {/* Energy */}
-          <LinearGradient
-            colors={['transparent', 'rgba(0,0,0,0.2)', 'transparent']}
-            start={[0, 0]}
-            end={[1, 0]}
-            style={styles.divider}
-          />
+          <DividerLine />
           <View style={styles.listItemWrapper}>
             <Image
               source={require('@/assets/images/system-icons/Filled.png')}
@@ -99,12 +94,7 @@ export default function Dashboard({}: PropsWithChildren) {
           </View>
 
           {/* System List */}
-          <LinearGradient
-            colors={['transparent', 'rgba(0,0,0,0.2)', 'transparent']}
-            start={[0, 0]}
-            end={[1, 0]}
-            style={styles.divider}
-          />
+          <DividerLine />
           <Pressable onPress={handleGotoSystemList}>
             <View style={styles.listItemWrapper}>
               <Image
@@ -126,12 +116,7 @@ export default function Dashboard({}: PropsWithChildren) {
           </Pressable>
 
           {/* Settings */}
-          <LinearGradient
-            colors={['transparent', 'rgba(0,0,0,0.2)', 'transparent']}
-            start={[0, 0]}
-            end={[1, 0]}
-            style={styles.divider}
-          />
+          <DividerLine />
           <View style={styles.listItemWrapper}>
             <Image
               source={require('@/assets/images/system-icons/Setting.png')}
