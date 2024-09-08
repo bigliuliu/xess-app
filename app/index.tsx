@@ -85,7 +85,7 @@ export default function Welcome() {
     },
   })
 
-  return <Redirect href="/add-new-system/owner" />
+  return <Redirect href="/add-new-system/system-check" />
   // return <Redirect href="/dashboard" />
   // return <Redirect href="/system-list" />
 
