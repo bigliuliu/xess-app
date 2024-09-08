@@ -23,6 +23,11 @@ export const useStyles = () => {
           top: 16,
           left: 21,
         },
+        progressWrapper: {
+          position: 'absolute',
+          top: 72,
+          left: 21,
+        },
         mask: {
           width: '100%',
           height: '100%',

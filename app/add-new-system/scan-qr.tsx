@@ -10,6 +10,7 @@ import {
 } from 'react-native'
 import { useCameraPermissions, CameraView } from 'expo-camera'
 import { Image } from 'expo-image'
+import { ProgressBar } from './ProgressBar'
 import { useStyles } from './styles/scan-qr.styles'
 
 export default function ScanQR() {
@@ -79,6 +80,10 @@ export default function ScanQR() {
               cachePolicy="memory"
             />
           </Pressable>
+
+          <View style={styles.progressWrapper}>
+            <ProgressBar progress={1} />
+          </View>
 
           <CameraView
             facing="back"
