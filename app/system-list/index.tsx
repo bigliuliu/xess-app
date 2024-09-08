@@ -41,6 +41,7 @@ export default function SystemList(props: PropsWithChildren<SystemListProps>) {
       router.back()
     }
   }
+  const handleAddNewSystem = () => {}
 
   return (
     <View style={styles.rootContainer}>
@@ -80,6 +81,16 @@ export default function SystemList(props: PropsWithChildren<SystemListProps>) {
           <DividerLine />
         </View>
       </View>
+
+      <Pressable style={styles.addSystemButton} onPress={handleAddNewSystem}>
+        <Image
+          source={require('@/assets/images/plus.png')}
+          style={styles.plusIcon}
+          contentFit="contain"
+          cachePolicy="memory"
+        />
+        <Text style={styles.addSystemText}>Add new system</Text>
+      </Pressable>
     </View>
   )
 }

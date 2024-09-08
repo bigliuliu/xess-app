@@ -1,8 +1,12 @@
-import { useMemo } from 'react'
-import { StyleSheet } from 'react-native'
+import { useEffect, useMemo } from 'react'
+import { Alert, StyleSheet } from 'react-native'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-export const useStyles = () =>
-  useMemo(
+export const useStyles = () => {
+  const insets = useSafeAreaInsets()
+  const safeAreaBottomHeight = insets.bottom
+
+  return useMemo(
     () =>
       StyleSheet.create({
         rootContainer: {
@@ -58,6 +62,31 @@ export const useStyles = () =>
           marginLeft: 24,
           marginTop: 24,
         },
+        addSystemButton: {
+          width: 353,
+          height: 52,
+          borderRadius: 26,
+          backgroundColor: '#000000',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          marginLeft: 24,
+          position: 'absolute',
+          bottom: 16 + safeAreaBottomHeight,
+          zIndex: 3,
+        },
+        plusIcon: {
+          width: 24,
+          height: 24,
+        },
+        addSystemText: {
+          color: '#ffffff',
+          fontSize: 14,
+          fontWeight: 500,
+          marginLeft: 8,
+        },
       }),
-    []
+    [safeAreaBottomHeight]
   )
+}
