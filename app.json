@@ -22,7 +22,15 @@
       "bundler": "metro",
       "output": "static"
     },
-    "plugins": ["expo-router", "expo-camera"],
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow XESS to access your camera to connect to your device"
+        }
+      ]
+    ],
     "experiments": {
       "typedRoutes": true
     },
