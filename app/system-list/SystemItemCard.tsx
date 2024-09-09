@@ -1,7 +1,8 @@
 import { PropsWithChildren } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Pressable } from 'react-native'
 import { Image } from 'expo-image'
 import { DividerLine } from '@/components/DividerLine'
+import { router } from 'expo-router'
 
 interface SystemItemCardProps {
   id: string
@@ -14,10 +15,14 @@ interface SystemItemCardProps {
 export const SystemItemCard = (
   props: PropsWithChildren<SystemItemCardProps>
 ) => {
+  const handleItemClick = () => {
+    router.push(`/system-info/${props.id}` as any)
+  }
+
   return (
     <>
       <DividerLine />
-      <View style={styles.cardWrapper}>
+      <Pressable style={styles.cardWrapper} onPress={handleItemClick}>
         <Image
           source={props.img}
           style={styles.img}
@@ -36,7 +41,7 @@ export const SystemItemCard = (
             )}
           </View>
         </View>
-      </View>
+      </Pressable>
     </>
   )
 }
