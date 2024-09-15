@@ -5,6 +5,7 @@ import { Image } from 'expo-image'
 import { CurvedBackground } from '@/components/CurvedBackground'
 import { EnergyHorizontalCard } from '@/components/EnergyHorizontalCard'
 import { EnergyProductionChart } from './EnergyProductionChart'
+import { EnergyConsumptionChart } from './EnergyConsumptionChart'
 
 export default function SystemInfo() {
   const styles = useStyles()
@@ -88,6 +89,8 @@ export default function SystemInfo() {
 
       <ScrollView style={styles.chatsWrapper}>
         <EnergyProductionChart data={data} />
+
+        <EnergyConsumptionChart data={data} />
       </ScrollView>
     </View>
   )
