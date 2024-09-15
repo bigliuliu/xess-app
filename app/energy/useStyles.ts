@@ -149,6 +149,13 @@ export const useStyles = () => {
         lineChartWrapper: {
           marginTop: 24,
           width: 353,
+          marginBottom: 24,
+        },
+        lineChartTextWrapper: {
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          marginBottom: 16,
         },
       }),
     []

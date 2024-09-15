@@ -64,6 +64,7 @@ export default function Register() {
       label: '6 pm',
     },
   ]
+  const lineChartData2 = [...lineChartData]
 
   const handleBack = () => {
     if (router.canGoBack()) {
@@ -133,6 +134,20 @@ export default function Register() {
         <DividerLine />
 
         <View style={styles.lineChartWrapper}>
+          <View style={styles.lineChartTextWrapper}>
+            <Text style={styles.chartTitle}>Energy production</Text>
+            <Dropdown
+              style={styles.dropdown}
+              labelField="label"
+              valueField="value"
+              data={dropdownData}
+              value={deivceUsgae}
+              onChange={(item) => {
+                setDeviceUseage(item.value as any)
+              }}
+              iconColor="#d8d8d8"
+            />
+          </View>
           <LineChart
             data={lineChartData}
             maxValue={8}
@@ -149,6 +164,53 @@ export default function Register() {
             startOpacity={0.5}
             endOpacity={0}
             color="#44FD26"
+            hideDataPoints
+            showVerticalLines
+            verticalLinesStrokeDashArray={[5, 5]}
+            yAxisTextStyle={{
+              fontSize: 10,
+              color: '#8f8f8f',
+            }}
+            xAxisLabelTextStyle={{
+              fontSize: 10,
+              color: '#8f8f8f',
+            }}
+          />
+        </View>
+
+        <DividerLine />
+
+        <View style={styles.lineChartWrapper}>
+          <View style={styles.lineChartTextWrapper}>
+            <Text style={styles.chartTitle}>Energy consumption</Text>
+            <Dropdown
+              style={styles.dropdown}
+              labelField="label"
+              valueField="value"
+              data={dropdownData}
+              value={deivceUsgae}
+              onChange={(item) => {
+                setDeviceUseage(item.value as any)
+              }}
+              iconColor="#d8d8d8"
+            />
+          </View>
+          <LineChart
+            data={lineChartData2.reverse()}
+            maxValue={8}
+            noOfSections={2}
+            yAxisThickness={0}
+            yAxisLabelSuffix=" kW"
+            isAnimated
+            curved
+            curveType={CurveType.QUADRATIC}
+            disableScroll
+            onlyPositive
+            areaChart
+            startFillColor="#FECB41"
+            startOpacity={0.5}
+            endOpacity={0}
+            color="#FECB41"
             hideDataPoints
             showVerticalLines
             verticalLinesStrokeDashArray={[5, 5]}
