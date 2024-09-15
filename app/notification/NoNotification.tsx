@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     marginTop: 64,
+    zIndex: 2,
   },
   img: {
     width: 353,
