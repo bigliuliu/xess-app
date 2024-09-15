@@ -10,6 +10,7 @@ import { EnergyConsumptionChart } from './EnergyConsumptionChart'
 import { useState } from 'react'
 import Animated, { FadeInUp, FadeOutUp } from 'react-native-reanimated'
 import { BlurView } from 'expo-blur'
+import { EnergyComparisonLineChart } from './EnergyComparisonLineChart'
 
 export default function SystemInfo() {
   const styles = useStyles()
@@ -181,6 +182,29 @@ export default function SystemInfo() {
           />
         </View>
         <EnergyConsumptionChart data={data} />
+
+        <View
+          style={[
+            styles.dropdownWrapper,
+            {
+              marginTop: 32,
+            },
+          ]}
+        >
+          <Text style={styles.chartTitle}>Comparison</Text>
+          <Dropdown
+            style={styles.dropdown}
+            labelField="label"
+            valueField="value"
+            data={dropdownData}
+            value={energyProductionChartRange}
+            onChange={(item) => {
+              setEnergyProductionChartRange(item.value as 'weekly' | 'daily')
+            }}
+            iconColor="#d8d8d8"
+          />
+        </View>
+        <EnergyComparisonLineChart />
 
         {/* empty block */}
         <View style={styles.emptyBlock}></View>

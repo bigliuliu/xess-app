@@ -16,7 +16,7 @@ import { useState } from 'react'
 import { PieChart, LineChart } from 'react-native-gifted-charts'
 import { DividerLine } from '@/components/DividerLine'
 
-enum CurveType {
+export enum CurveType {
   CUBIC = 0,
   QUADRATIC = 1,
 }
