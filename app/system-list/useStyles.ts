@@ -36,13 +36,21 @@ export const useStyles = () => {
           flexDirection: 'column',
           zIndex: 2,
         },
-        whiteBgCut: {
-          width: '100%',
-          height: '100%',
-          zIndex: 0,
+        curvedBg: {
+          width: 393,
+          height: 74,
+          backgroundColor: '#181818',
+          zIndex: 1,
           position: 'absolute',
-          top: 0,
-          left: 0,
+          bottom: 690,
+        },
+        whiteBgWrapper: {
+          width: '100%',
+          height: 690,
+          backgroundColor: '#fff',
+          zIndex: 1,
+          position: 'absolute',
+          bottom: 0,
         },
         systemListTitle: {
           width: '100%',
@@ -61,6 +69,7 @@ export const useStyles = () => {
           flexDirection: 'column',
           marginLeft: 24,
           marginTop: 24,
+          zIndex: 2,
         },
         addSystemButton: {
           width: 353,

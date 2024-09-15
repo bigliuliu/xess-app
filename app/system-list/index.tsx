@@ -6,6 +6,7 @@ import { router } from 'expo-router'
 import { SystemItemCard } from './SystemItemCard'
 import { LinearGradient } from 'expo-linear-gradient'
 import { DividerLine } from '@/components/DividerLine'
+import { CurvedBackground } from '@/components/CurvedBackground'
 
 interface SystemListProps {}
 
@@ -55,12 +56,11 @@ export default function SystemList(props: PropsWithChildren<SystemListProps>) {
       </Pressable>
 
       <View style={styles.systemListWrapper}>
-        <Image
-          source={require('@/assets/images/white-bg-cut-2.png')}
-          style={styles.whiteBgCut}
-          contentFit="contain"
-          cachePolicy="memory"
+        <CurvedBackground
+          styles={styles.curvedBg}
+          path="M270.964 48.7036L231.079 7.34075C226.555 2.64986 220.319 0 213.802 0H23C9.74517 0 -1 10.7451 -1 24V793H393V80.3959C393 67.1818 382.318 56.4536 369.104 56.3961L288.136 56.0441C281.656 56.0159 275.462 53.3684 270.964 48.7036Z"
         />
+        <View style={styles.whiteBgWrapper}></View>
 
         {/* title */}
         <Text style={styles.systemListTitle}>System List</Text>
