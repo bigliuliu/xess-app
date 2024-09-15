@@ -1,8 +1,11 @@
 import { useMemo } from 'react'
 import { StyleSheet } from 'react-native'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
-export const useStyles = () =>
-  useMemo(
+export const useStyles = () => {
+  const insets = useSafeAreaInsets()
+  const safeAreaBottomHeight = insets.bottom
+  return useMemo(
     () =>
       StyleSheet.create({
         rootContainer: {
@@ -77,13 +80,46 @@ export const useStyles = () =>
           top: -55,
           left: 21,
         },
-        chatsWrapper: {
+        chartsWrapper: {
           width: '100%',
           paddingHorizontal: 21,
           display: 'flex',
           flexDirection: 'column',
           backgroundColor: '#fff',
         },
+        dropdown: {
+          width: 78,
+          height: 28,
+          borderWidth: 1,
+          borderRadius: 14,
+          borderColor: '#d8d8d8',
+          display: 'flex',
+          flexDirection: 'row',
+          paddingHorizontal: 12,
+          paddingVertical: 8,
+          color: '#d8d8d8',
+          fontSize: 10,
+          position: 'relative',
+        },
+        dropdownWrapper: {
+          width: '100%',
+          height: 28,
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          marginTop: 20,
+          marginBottom: 12,
+        },
+        chartTitle: {
+          fontSize: 14,
+          fontWeight: 500,
+          color: '#000',
+        },
+        emptyBlock: {
+          width: '100%',
+          height: 20 + safeAreaBottomHeight,
+        },
       }),
     []
   )
+}

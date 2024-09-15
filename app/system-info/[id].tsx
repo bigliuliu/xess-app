@@ -3,13 +3,20 @@ import { router, useLocalSearchParams } from 'expo-router'
 import { useStyles } from './useStyles'
 import { Image } from 'expo-image'
 import { CurvedBackground } from '@/components/CurvedBackground'
+import { Dropdown } from 'react-native-element-dropdown'
 import { EnergyHorizontalCard } from '@/components/EnergyHorizontalCard'
 import { EnergyProductionChart } from './EnergyProductionChart'
 import { EnergyConsumptionChart } from './EnergyConsumptionChart'
+import { useState } from 'react'
 
 export default function SystemInfo() {
   const styles = useStyles()
   const { id } = useLocalSearchParams()
+  const [energyProductionChartRange, setEnergyProductionChartRange] = useState<
+    'weekly' | 'daily'
+  >('weekly')
+  const [energyConsumptionChartRange, setEnergyConsumptionChartRange] =
+    useState<'weekly' | 'daily'>('weekly')
 
   const handleBack = () => {
     if (router.canGoBack()) {
@@ -46,6 +53,11 @@ export default function SystemInfo() {
       label: 'Sun 2',
       value: 6.8,
     },
+  ]
+
+  const dropdownData = [
+    { label: 'daily', value: 'daily' },
+    { label: 'weekly', value: 'weekly' },
   ]
 
   return (
@@ -87,10 +99,48 @@ export default function SystemInfo() {
         <Text style={styles.systemInfoTitle}>Solars</Text>
       </View>
 
-      <ScrollView style={styles.chatsWrapper}>
+      <ScrollView style={styles.chartsWrapper}>
+        <View style={[styles.dropdownWrapper]}>
+          <Text style={styles.chartTitle}>Energy production</Text>
+          <Dropdown
+            style={styles.dropdown}
+            labelField="label"
+            valueField="value"
+            data={dropdownData}
+            value={energyProductionChartRange}
+            onChange={(item) => {
+              setEnergyProductionChartRange(item.value as 'weekly' | 'daily')
+            }}
+            iconColor="#d8d8d8"
+          />
+        </View>
         <EnergyProductionChart data={data} />
 
+        <View
+          style={[
+            styles.dropdownWrapper,
+            {
+              marginTop: 32,
+            },
+          ]}
+        >
+          <Text style={styles.chartTitle}>Energy consumption</Text>
+          <Dropdown
+            style={styles.dropdown}
+            labelField="label"
+            valueField="value"
+            data={dropdownData}
+            value={energyProductionChartRange}
+            onChange={(item) => {
+              setEnergyProductionChartRange(item.value as 'weekly' | 'daily')
+            }}
+            iconColor="#d8d8d8"
+          />
+        </View>
         <EnergyConsumptionChart data={data} />
+
+        {/* empty block */}
+        <View style={styles.emptyBlock}></View>
       </ScrollView>
     </View>
   )
