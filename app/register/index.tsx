@@ -1,6 +1,5 @@
 import { View, Text, TextInput, Pressable, Alert, AppState } from 'react-native'
 import { useStyles } from './useStyles'
-import { Image } from 'expo-image'
 import { useForm, Controller } from 'react-hook-form'
 import Ionicons from '@expo/vector-icons/Ionicons'
 import { useState } from 'react'
@@ -10,6 +9,7 @@ import { AppleLoginButton } from '@/components/AppleLoginButton'
 import { Link, router } from 'expo-router'
 import { supabase } from '@/lib/supabase'
 import { useLoadingStore } from '@/stores'
+import { CurvedBackground } from '@/components/CurvedBackground'
 
 // Tells Supabase Auth to continuously refresh the session automatically if
 // the app is in the foreground. When this is added, you will continue to receive
@@ -73,12 +73,8 @@ export default function Register() {
   return (
     <View style={styles.rootContainer}>
       <View style={styles.bgContianer}>
-        <Image
-          source={require('@/assets/images/white-bg-cut.png')}
-          style={styles.whiteBgCut}
-          contentFit="contain"
-          cachePolicy="memory"
-        />
+        <CurvedBackground styles={styles.curvedBg} />
+        <View style={styles.whiteBgWrapper}></View>
 
         <Text style={styles.registerText}>Register</Text>
 
