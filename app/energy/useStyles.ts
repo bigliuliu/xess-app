@@ -62,7 +62,7 @@ export const useStyles = () => {
         },
         emptyBlock: {
           width: '100%',
-          height: 20 + safeAreaBottomHeight,
+          height: safeAreaBottomHeight,
         },
         dropdownWrapper: {
           width: '100%',
@@ -156,6 +156,31 @@ export const useStyles = () => {
           flexDirection: 'row',
           justifyContent: 'space-between',
           marginBottom: 16,
+        },
+        usageWrapper: {
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        },
+        usageItemWrapper: {
+          width: 353,
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          marginVertical: 12,
+        },
+        usageIcon: {
+          width: 24,
+          height: 24,
+        },
+        usageText: {
+          fontSize: 14,
+          fontWeight: 500,
+          marginLeft: 8,
+        },
+        usageValue: {
+          marginLeft: 'auto',
         },
       }),
     []

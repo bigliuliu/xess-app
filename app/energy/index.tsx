@@ -34,6 +34,27 @@ export default function Register() {
     { value: 120, color: '#6636E9', text: 'Powerwall' },
     { value: 20, color: '#343434', text: 'Grid' },
   ]
+  const powerwallValue = Math.floor(
+    (pieData[1].value /
+      pieData.reduce((prev, acc) => {
+        return prev + acc.value
+      }, 0)) *
+      100
+  )
+  const solarValue = Math.floor(
+    (pieData[0].value /
+      pieData.reduce((prev, acc) => {
+        return prev + acc.value
+      }, 0)) *
+      100
+  )
+  const gridValue = Math.floor(
+    (pieData[2].value /
+      pieData.reduce((prev, acc) => {
+        return prev + acc.value
+      }, 0)) *
+      100
+  )
   const lineChartData = [
     {
       value: 2.1,
@@ -225,6 +246,67 @@ export default function Register() {
               color: '#8f8f8f',
             }}
           />
+        </View>
+
+        <View style={styles.lineChartWrapper}>
+          <View style={styles.lineChartTextWrapper}>
+            <Text style={styles.chartTitle}>Usage</Text>
+            <Dropdown
+              style={styles.dropdown}
+              labelField="label"
+              valueField="value"
+              data={dropdownData}
+              value={deivceUsgae}
+              onChange={(item) => {
+                setDeviceUseage(item.value as any)
+              }}
+              iconColor="#d8d8d8"
+            />
+          </View>
+
+          <View style={styles.usageWrapper}>
+            <DividerLine />
+            <View style={styles.usageItemWrapper}>
+              <Image
+                source={require('@/assets/images/energy/usage_powerwall.png')}
+                style={styles.usageIcon}
+                contentFit="contain"
+                cachePolicy="memory"
+              />
+              <Text style={styles.usageText}>Powerwall</Text>
+              <Text style={[styles.usageText, styles.usageValue]}>
+                {powerwallValue}%
+              </Text>
+            </View>
+
+            <DividerLine />
+            <View style={styles.usageItemWrapper}>
+              <Image
+                source={require('@/assets/images/energy/usage_solar.png')}
+                style={styles.usageIcon}
+                contentFit="contain"
+                cachePolicy="memory"
+              />
+              <Text style={styles.usageText}>Solar</Text>
+              <Text style={[styles.usageText, styles.usageValue]}>
+                {solarValue}%
+              </Text>
+            </View>
+
+            <DividerLine />
+            <View style={styles.usageItemWrapper}>
+              <Image
+                source={require('@/assets/images/energy/usage_grid.png')}
+                style={styles.usageIcon}
+                contentFit="contain"
+                cachePolicy="memory"
+              />
+              <Text style={styles.usageText}>Grid</Text>
+              <Text style={[styles.usageText, styles.usageValue]}>
+                {gridValue}%
+              </Text>
+            </View>
+          </View>
         </View>
 
         {/* empty block */}
