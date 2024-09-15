@@ -38,6 +38,10 @@ export const useStyles = () =>
           width: '100%',
           height: '100%',
         },
+        energyCardWrapper: {
+          width: 351,
+          marginTop: 36,
+        },
       }),
     []
   )

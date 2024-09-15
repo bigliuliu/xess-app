@@ -3,6 +3,7 @@ import { router, useLocalSearchParams } from 'expo-router'
 import { useStyles } from './useStyles'
 import { Image } from 'expo-image'
 import { CurvedBackground } from '@/components/CurvedBackground'
+import { EnergyHorizontalCard } from '@/components/EnergyHorizontalCard'
 
 export default function SystemInfo() {
   const styles = useStyles()
@@ -40,6 +41,10 @@ export default function SystemInfo() {
         contentFit="contain"
         cachePolicy="memory"
       />
+
+      <View style={styles.energyCardWrapper}>
+        <EnergyHorizontalCard status="up" title="Actual usage" text="1.8 kW" />
+      </View>
     </View>
   )
 }
