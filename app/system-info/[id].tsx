@@ -8,6 +8,12 @@ import { EnergyHorizontalCard } from '@/components/EnergyHorizontalCard'
 import { EnergyProductionChart } from './EnergyProductionChart'
 import { EnergyConsumptionChart } from './EnergyConsumptionChart'
 import { useState } from 'react'
+import Animated, {
+  FadeIn,
+  FadeInUp,
+  FadeOut,
+  FadeOutUp,
+} from 'react-native-reanimated'
 
 export default function SystemInfo() {
   const styles = useStyles()
@@ -17,11 +23,15 @@ export default function SystemInfo() {
   >('weekly')
   const [energyConsumptionChartRange, setEnergyConsumptionChartRange] =
     useState<'weekly' | 'daily'>('weekly')
+  const [showSystemInfo, setShowSystemInfo] = useState(false)
 
   const handleBack = () => {
     if (router.canGoBack()) {
       router.back()
     }
+  }
+  const handleInfouButtonClick = () => {
+    setShowSystemInfo(!showSystemInfo)
   }
 
   const data = [
@@ -71,7 +81,10 @@ export default function SystemInfo() {
         />
       </Pressable>
 
-      <Pressable style={styles.infoButtonWrapper}>
+      <Pressable
+        style={styles.infoButtonWrapper}
+        onPress={handleInfouButtonClick}
+      >
         <Image
           source={require('@/assets/images/info.png')}
           style={styles.infoButton}
@@ -80,12 +93,38 @@ export default function SystemInfo() {
         />
       </Pressable>
 
-      <Image
-        source={require('@/assets/images/system-list/solar_panel_left.png')}
-        style={styles.systemImg}
-        contentFit="contain"
-        cachePolicy="memory"
-      />
+      <View style={styles.systemImgWrapper}>
+        {showSystemInfo ? (
+          <Animated.View
+            style={styles.systemPanelWrapper}
+            entering={FadeInUp}
+            exiting={FadeOutUp}
+          >
+            <View style={styles.detailItemWrapper}>
+              <Text style={styles.detailItemTitle}>System name</Text>
+              <Text style={styles.detailItemValue}>Tesla Solar Panel</Text>
+            </View>
+            <View style={styles.detailItemWrapper}>
+              <Text style={styles.detailItemTitle}>Date of first connect</Text>
+              <Text style={styles.detailItemValue}>27.4.2022</Text>
+            </View>
+            <View style={styles.detailItemWrapper}>
+              <Text style={styles.detailItemTitle}>System ID</Text>
+              <Text style={styles.detailItemValue}>246.205.224.115</Text>
+            </View>
+            <View style={styles.detailItemWrapper}>
+              <Text style={styles.detailItemTitle}>System Backup Number</Text>
+              <Text style={styles.detailItemValue}>159205482</Text>
+            </View>
+          </Animated.View>
+        ) : null}
+        <Image
+          source={require('@/assets/images/system-list/solar_panel_left.png')}
+          style={styles.systemImg}
+          contentFit="contain"
+          cachePolicy="memory"
+        />
+      </View>
 
       <View style={styles.energyCardWrapper}>
         <EnergyHorizontalCard status="up" title="Actual usage" text="1.8 kW" />

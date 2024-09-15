@@ -20,15 +20,24 @@ export const useStyles = () => {
           position: 'absolute',
           top: 16,
           left: 21,
+          zIndex: 3,
         },
         backButton: {
           width: '100%',
           height: '100%',
         },
-        systemImg: {
+        systemImgWrapper: {
           width: 365,
           height: 274,
           marginTop: 50,
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'center',
+          position: 'relative',
+        },
+        systemImg: {
+          width: '100%',
+          height: '100%',
         },
         infoButtonWrapper: {
           width: 40,
@@ -36,6 +45,7 @@ export const useStyles = () => {
           position: 'absolute',
           top: 16,
           right: 69,
+          zIndex: 3,
         },
         infoButton: {
           width: '100%',
@@ -118,6 +128,32 @@ export const useStyles = () => {
         emptyBlock: {
           width: '100%',
           height: 20 + safeAreaBottomHeight,
+        },
+        systemPanelWrapper: {
+          width: 353,
+          borderRadius: 16,
+          gap: 8,
+          backgroundColor: 'rgba(48, 48, 48, 0.80)',
+          display: 'flex',
+          flexDirection: 'column',
+          padding: 16,
+          position: 'absolute',
+          zIndex: 2,
+          top: 16,
+        },
+        detailItemWrapper: {
+          display: 'flex',
+          flexDirection: 'column',
+        },
+        detailItemTitle: {
+          fontSize: 10,
+          color: '#8f8f8f',
+        },
+        detailItemValue: {
+          fontSize: 12,
+          color: '#fff',
+          fontWeight: 500,
+          marginTop: 8,
         },
       }),
     []
