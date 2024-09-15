@@ -18,6 +18,9 @@ export default function Dashboard({}: PropsWithChildren) {
   const handleGotoSystemList = () => {
     router.push('/system-list')
   }
+  const handleGotoEnergy = () => {
+    router.push('/energy')
+  }
 
   // clear all router history if possible
   useEffect(() => {
@@ -79,7 +82,7 @@ export default function Dashboard({}: PropsWithChildren) {
         <View style={styles.systemListWrapper}>
           {/* Energy */}
           <DividerLine />
-          <View style={styles.listItemWrapper}>
+          <Pressable style={styles.listItemWrapper} onPress={handleGotoEnergy}>
             <Image
               source={require('@/assets/images/system-icons/Filled.png')}
               style={styles.systemListIcon}
@@ -98,7 +101,7 @@ export default function Dashboard({}: PropsWithChildren) {
               contentFit="contain"
               cachePolicy="memory"
             />
-          </View>
+          </Pressable>
 
           {/* System List */}
           <DividerLine />
