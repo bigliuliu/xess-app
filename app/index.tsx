@@ -10,8 +10,8 @@ export default function Welcome() {
 
   const styles = useStyles({ isStartButtonPress })
 
-  // return <Redirect href="/system-info/1234" />
-  return <Redirect href="/dashboard" />
+  return <Redirect href="/system-info/1234" />
+  // return <Redirect href="/dashboard" />
 
   return (
     <View style={styles.rootContainer}>
@@ -22,8 +22,8 @@ export default function Welcome() {
         <View style={styles.bgRing2} />
         <View style={styles.bgRing3} />
       </View>
-
       <CurvedBackground styles={styles.bgWrapper} />
+
       <View style={styles.buttonWrapper}>
         <Link
           href="/login"
