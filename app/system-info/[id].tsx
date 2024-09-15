@@ -8,12 +8,8 @@ import { EnergyHorizontalCard } from '@/components/EnergyHorizontalCard'
 import { EnergyProductionChart } from './EnergyProductionChart'
 import { EnergyConsumptionChart } from './EnergyConsumptionChart'
 import { useState } from 'react'
-import Animated, {
-  FadeIn,
-  FadeInUp,
-  FadeOut,
-  FadeOutUp,
-} from 'react-native-reanimated'
+import Animated, { FadeInUp, FadeOutUp } from 'react-native-reanimated'
+import { BlurView } from 'expo-blur'
 
 export default function SystemInfo() {
   const styles = useStyles()
@@ -100,22 +96,30 @@ export default function SystemInfo() {
             entering={FadeInUp}
             exiting={FadeOutUp}
           >
-            <View style={styles.detailItemWrapper}>
-              <Text style={styles.detailItemTitle}>System name</Text>
-              <Text style={styles.detailItemValue}>Tesla Solar Panel</Text>
-            </View>
-            <View style={styles.detailItemWrapper}>
-              <Text style={styles.detailItemTitle}>Date of first connect</Text>
-              <Text style={styles.detailItemValue}>27.4.2022</Text>
-            </View>
-            <View style={styles.detailItemWrapper}>
-              <Text style={styles.detailItemTitle}>System ID</Text>
-              <Text style={styles.detailItemValue}>246.205.224.115</Text>
-            </View>
-            <View style={styles.detailItemWrapper}>
-              <Text style={styles.detailItemTitle}>System Backup Number</Text>
-              <Text style={styles.detailItemValue}>159205482</Text>
-            </View>
+            <BlurView
+              style={styles.blurWrapper}
+              intensity={50}
+              experimentalBlurMethod="dimezisBlurView"
+            >
+              <View style={styles.detailItemWrapper}>
+                <Text style={styles.detailItemTitle}>System name</Text>
+                <Text style={styles.detailItemValue}>Tesla Solar Panel</Text>
+              </View>
+              <View style={styles.detailItemWrapper}>
+                <Text style={styles.detailItemTitle}>
+                  Date of first connect
+                </Text>
+                <Text style={styles.detailItemValue}>27.4.2022</Text>
+              </View>
+              <View style={styles.detailItemWrapper}>
+                <Text style={styles.detailItemTitle}>System ID</Text>
+                <Text style={styles.detailItemValue}>246.205.224.115</Text>
+              </View>
+              <View style={styles.detailItemWrapper}>
+                <Text style={styles.detailItemTitle}>System Backup Number</Text>
+                <Text style={styles.detailItemValue}>159205482</Text>
+              </View>
+            </BlurView>
           </Animated.View>
         ) : null}
         <Image

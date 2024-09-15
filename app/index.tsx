@@ -10,7 +10,7 @@ export default function Welcome() {
 
   const styles = useStyles({ isStartButtonPress })
 
-  return <Redirect href="/system-info/1234" />
+  // return <Redirect href="/system-info/1234" />
   return <Redirect href="/dashboard" />
 
   return (
