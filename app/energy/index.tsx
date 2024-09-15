@@ -112,9 +112,9 @@ export default function Register() {
           </View>
 
           <View style={styles.energyTextWrapper}>
-            {pieData.map((item) => {
+            {pieData.map((item, index) => {
               return (
-                <View style={styles.energyTextItem}>
+                <View style={styles.energyTextItem} key={index}>
                   <View
                     style={[
                       styles.energyItemColorBar,
@@ -155,6 +155,7 @@ export default function Register() {
             yAxisThickness={0}
             yAxisLabelSuffix=" kW"
             isAnimated
+            animationDuration={1500}
             curved
             curveType={CurveType.QUADRATIC}
             disableScroll
@@ -202,6 +203,7 @@ export default function Register() {
             yAxisThickness={0}
             yAxisLabelSuffix=" kW"
             isAnimated
+            animationDuration={1500}
             curved
             curveType={CurveType.QUADRATIC}
             disableScroll
