@@ -7,6 +7,7 @@ import { EnergySmallCard } from '@/components/EnergySmallCard'
 import { EnergyHorizontalCard } from '@/components/EnergyHorizontalCard'
 import { router } from 'expo-router'
 import { DividerLine } from '@/components/DividerLine'
+import { CurvedBackground } from '@/components/CurvedBackground'
 
 export default function Dashboard({}: PropsWithChildren) {
   const styles = useStyles()
@@ -65,12 +66,11 @@ export default function Dashboard({}: PropsWithChildren) {
 
       {/* system list */}
       <View style={styles.listWrapper}>
-        <Image
-          source={require('@/assets/images/white-bg-cut-2.png')}
-          style={styles.whiteBgCut}
-          contentFit="contain"
-          cachePolicy="memory"
+        <CurvedBackground
+          styles={styles.curvedBg}
+          path="M271.965 48.7039L232.079 7.34075C227.555 2.64986 221.319 0 214.802 0H24C10.7452 0 0 10.7451 0 24V793H393V80.395C393 67.1812 382.319 56.4532 369.105 56.3952L289.135 56.0445C282.656 56.016 276.463 53.3685 271.965 48.7039Z"
         />
+        <View style={styles.whiteBgWrapper}></View>
 
         {/* title */}
         <Text style={styles.usageTitle}>Energy usage</Text>
