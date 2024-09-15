@@ -95,6 +95,7 @@ export const useStyles = () => {
         pieWrapper: {
           width: 353,
           marginTop: 16,
+          marginBottom: 24,
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'space-between',
@@ -144,6 +145,10 @@ export const useStyles = () => {
           fontSize: 14,
           fontWeight: 500,
           marginTop: 8,
+        },
+        lineChartWrapper: {
+          marginTop: 24,
+          width: 353,
         },
       }),
     []

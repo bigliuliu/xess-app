@@ -13,7 +13,13 @@ import { router } from 'expo-router'
 import { Image } from 'expo-image'
 import { Dropdown } from 'react-native-element-dropdown'
 import { useState } from 'react'
-import { PieChart } from 'react-native-gifted-charts'
+import { PieChart, LineChart } from 'react-native-gifted-charts'
+import { DividerLine } from '@/components/DividerLine'
+
+enum CurveType {
+  CUBIC = 0,
+  QUADRATIC = 1,
+}
 
 export default function Register() {
   const styles = useStyles()
@@ -27,6 +33,36 @@ export default function Register() {
     { value: 80.5, color: '#F5694D', text: 'Solar panels' },
     { value: 120, color: '#6636E9', text: 'Powerwall' },
     { value: 20, color: '#343434', text: 'Grid' },
+  ]
+  const lineChartData = [
+    {
+      value: 2.1,
+      label: '6 am',
+    },
+    {
+      value: 2.6,
+      label: '7 am',
+    },
+    {
+      value: 4.2,
+      label: '9 am',
+    },
+    {
+      value: 3.5,
+      label: '12 pm',
+    },
+    {
+      value: 3.9,
+      label: '3 pm',
+    },
+    {
+      value: 4.1,
+      label: '4 pm',
+    },
+    {
+      value: 2,
+      label: '6 pm',
+    },
   ]
 
   const handleBack = () => {
@@ -92,6 +128,39 @@ export default function Register() {
               )
             })}
           </View>
+        </View>
+
+        <DividerLine />
+
+        <View style={styles.lineChartWrapper}>
+          <LineChart
+            data={lineChartData}
+            maxValue={8}
+            noOfSections={2}
+            yAxisThickness={0}
+            yAxisLabelSuffix=" kW"
+            isAnimated
+            curved
+            curveType={CurveType.QUADRATIC}
+            disableScroll
+            onlyPositive
+            areaChart
+            startFillColor="#44FD26"
+            startOpacity={0.5}
+            endOpacity={0}
+            color="#44FD26"
+            hideDataPoints
+            showVerticalLines
+            verticalLinesStrokeDashArray={[5, 5]}
+            yAxisTextStyle={{
+              fontSize: 10,
+              color: '#8f8f8f',
+            }}
+            xAxisLabelTextStyle={{
+              fontSize: 10,
+              color: '#8f8f8f',
+            }}
+          />
         </View>
 
         {/* empty block */}
