@@ -13,6 +13,7 @@ import { router } from 'expo-router'
 import { Image } from 'expo-image'
 import { Dropdown } from 'react-native-element-dropdown'
 import { useState } from 'react'
+import { PieChart } from 'react-native-gifted-charts'
 
 export default function Register() {
   const styles = useStyles()
@@ -21,6 +22,11 @@ export default function Register() {
   const dropdownData = [
     { label: 'daily', value: 'daily' },
     { label: 'weekly', value: 'weekly' },
+  ]
+  const pieData = [
+    { value: 80.5, color: '#F5694D', text: 'solar' },
+    { value: 120, color: '#6636E9', text: 'powerwall' },
+    { value: 20, color: '#343434', text: 'grid' },
   ]
 
   const handleBack = () => {
@@ -57,6 +63,12 @@ export default function Register() {
             }}
             iconColor="#d8d8d8"
           />
+        </View>
+
+        <View style={styles.pieWrapper}>
+          <View style={styles.pieChart}>
+            <PieChart donut radius={108} data={pieData} />
+          </View>
         </View>
 
         {/* empty block */}

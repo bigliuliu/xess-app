@@ -92,6 +92,14 @@ export const useStyles = () => {
           fontWeight: 500,
           color: '#000',
         },
+        pieWrapper: {
+          width: 353,
+          marginTop: 16,
+        },
+        pieChart: {
+          width: 216,
+          height: 216,
+        },
       }),
     []
   )
