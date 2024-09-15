@@ -24,9 +24,9 @@ export default function Register() {
     { label: 'weekly', value: 'weekly' },
   ]
   const pieData = [
-    { value: 80.5, color: '#F5694D', text: 'solar' },
-    { value: 120, color: '#6636E9', text: 'powerwall' },
-    { value: 20, color: '#343434', text: 'grid' },
+    { value: 80.5, color: '#F5694D', text: 'Solar panels' },
+    { value: 120, color: '#6636E9', text: 'Powerwall' },
+    { value: 20, color: '#343434', text: 'Grid' },
   ]
 
   const handleBack = () => {
@@ -72,6 +72,25 @@ export default function Register() {
               <Text style={styles.energyText}>220.5</Text>
               <Text>kWh</Text>
             </View>
+          </View>
+
+          <View style={styles.energyTextWrapper}>
+            {pieData.map((item) => {
+              return (
+                <View style={styles.energyTextItem}>
+                  <View
+                    style={[
+                      styles.energyItemColorBar,
+                      {
+                        backgroundColor: item.color,
+                      },
+                    ]}
+                  />
+                  <Text style={styles.energyItemText}>{item.text}</Text>
+                  <Text style={styles.energyValueItem}>{item.value} kWh</Text>
+                </View>
+              )
+            })}
           </View>
         </View>
 

@@ -95,6 +95,9 @@ export const useStyles = () => {
         pieWrapper: {
           width: 353,
           marginTop: 16,
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
         },
         pieChart: {
           width: 216,
@@ -113,6 +116,34 @@ export const useStyles = () => {
           fontSize: 29,
           fontWeight: 500,
           color: '#000',
+        },
+        energyTextWrapper: {
+          width: 80,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          gap: 16,
+        },
+        energyTextItem: {
+          width: 80,
+          display: 'flex',
+          flexDirection: 'column',
+        },
+        energyItemColorBar: {
+          width: 52,
+          height: 2,
+          borderRadius: 1,
+        },
+        energyItemText: {
+          fontSize: 10,
+          color: '#8f8f8f',
+          marginTop: 8,
+        },
+        energyValueItem: {
+          color: '#000',
+          fontSize: 14,
+          fontWeight: 500,
+          marginTop: 8,
         },
       }),
     []
