@@ -30,13 +30,6 @@ export const useStyles = ({
       bottom: 16 + safeAreaBottomHeight,
       zIndex: 1,
     },
-    whiteBgCut: {
-      width: 393,
-      height: 793,
-      zIndex: 0,
-      position: 'absolute',
-      bottom: -550,
-    },
     bgRing1: {
       width: 200,
       height: 200,
@@ -83,6 +76,19 @@ export const useStyles = ({
       color: '#ffffff',
       fontWeight: 600,
       fontSize: 18,
+    },
+    bgWrapper: {
+      position: 'absolute',
+      bottom: 90 + safeAreaBottomHeight,
+    },
+    buttonWrapper: {
+      backgroundColor: '#fff',
+      width: 393,
+      height: 100 + safeAreaBottomHeight,
+      position: 'absolute',
+      bottom: 0,
+      display: 'flex',
+      alignItems: 'center',
     },
   })
 }
