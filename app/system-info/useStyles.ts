@@ -77,6 +77,13 @@ export const useStyles = () =>
           top: -55,
           left: 21,
         },
+        chatsWrapper: {
+          width: '100%',
+          paddingHorizontal: 21,
+          display: 'flex',
+          flexDirection: 'column',
+          backgroundColor: '#fff',
+        },
       }),
     []
   )

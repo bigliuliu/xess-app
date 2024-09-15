@@ -1,9 +1,10 @@
-import { View, Text, Pressable } from 'react-native'
+import { View, Text, Pressable, ScrollView } from 'react-native'
 import { router, useLocalSearchParams } from 'expo-router'
 import { useStyles } from './useStyles'
 import { Image } from 'expo-image'
 import { CurvedBackground } from '@/components/CurvedBackground'
 import { EnergyHorizontalCard } from '@/components/EnergyHorizontalCard'
+import { BarChart } from 'react-native-gifted-charts'
 
 export default function SystemInfo() {
   const styles = useStyles()
@@ -14,6 +15,69 @@ export default function SystemInfo() {
       router.back()
     }
   }
+
+  const data = [
+    {
+      label: 'Mon 27',
+      value: 7.1,
+    },
+    {
+      label: 'Tue 28',
+      value: 6.8,
+    },
+    {
+      label: 'Wed 29',
+      value: 4,
+    },
+    {
+      label: 'Thu 30',
+      value: 5.2,
+    },
+    {
+      label: 'Fri 31',
+      value: 6.5,
+    },
+    {
+      label: 'Sat 1',
+      value: 7.1,
+    },
+    {
+      label: 'Sun 2',
+      value: 6.8,
+    },
+  ]
+
+  const barData = data.map((item) => ({
+    label: item.label,
+    value: item.value,
+    labelComponent: () => {
+      const weekday = item.label.split(' ')[0]
+      const day = item.label.split(' ')[1]
+      return (
+        <>
+          <View
+            style={{
+              width: 32,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              marginHorizontal: 'auto',
+            }}
+          >
+            <Text style={{ color: '#8f8f8f', fontSize: 8 }}>{weekday}</Text>
+            <Text
+              style={{
+                color: '#8f8f8f',
+                fontSize: 8,
+              }}
+            >
+              {day}
+            </Text>
+          </View>
+        </>
+      )
+    },
+  }))
 
   return (
     <View style={styles.rootContainer}>
@@ -53,6 +117,32 @@ export default function SystemInfo() {
       <View style={styles.systemWrapper}>
         <Text style={styles.systemInfoTitle}>Solars</Text>
       </View>
+
+      <ScrollView style={styles.chatsWrapper}>
+        <BarChart
+          width={312}
+          data={barData}
+          isAnimated
+          yAxisLabelWidth={24}
+          barWidth={30}
+          yAxisLabelSuffix=" kW"
+          spacing={14}
+          yAxisTextStyle={{
+            color: '#8F8F8F',
+            fontSize: 8,
+          }}
+          yAxisColor="#8F8F8F"
+          showGradient
+          frontColor="rgba(68, 253, 38, 0.25)"
+          gradientColor="#44FD26"
+          barBorderTopLeftRadius={8}
+          barBorderTopRightRadius={8}
+          noOfSections={2}
+          yAxisThickness={0}
+          disableScroll
+          disablePress
+        />
+      </ScrollView>
     </View>
   )
 }
