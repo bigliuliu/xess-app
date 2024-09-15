@@ -100,6 +100,20 @@ export const useStyles = () => {
           width: 216,
           height: 216,
         },
+        enerySumTextWrapper: {
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          transform: [{ translateX: -38 }, { translateY: -26 }],
+        },
+        energyText: {
+          fontSize: 29,
+          fontWeight: 500,
+          color: '#000',
+        },
       }),
     []
   )

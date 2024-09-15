@@ -67,7 +67,11 @@ export default function Register() {
 
         <View style={styles.pieWrapper}>
           <View style={styles.pieChart}>
-            <PieChart donut radius={108} data={pieData} />
+            <PieChart donut radius={108} data={pieData} innerRadius={62} />
+            <View style={styles.enerySumTextWrapper}>
+              <Text style={styles.energyText}>220.5</Text>
+              <Text>kWh</Text>
+            </View>
           </View>
         </View>
 
