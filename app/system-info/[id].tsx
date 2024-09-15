@@ -45,6 +45,14 @@ export default function SystemInfo() {
       <View style={styles.energyCardWrapper}>
         <EnergyHorizontalCard status="up" title="Actual usage" text="1.8 kW" />
       </View>
+
+      <CurvedBackground
+        styles={styles.curvedBg}
+        path="M270.964 48.7036L231.079 7.34075C226.555 2.64986 220.319 0 213.802 0H23C9.74517 0 -1 10.7451 -1 24V793H393V80.3959C393 67.1818 382.318 56.4536 369.104 56.3961L288.136 56.0441C281.656 56.0159 275.462 53.3684 270.964 48.7036Z"
+      />
+      <View style={styles.systemWrapper}>
+        <Text style={styles.systemInfoTitle}>Solars</Text>
+      </View>
     </View>
   )
 }
