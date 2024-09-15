@@ -1,5 +1,4 @@
 import { Text, View, TextInput, Pressable, Alert } from 'react-native'
-import { Image } from 'expo-image'
 import { Logo } from '@/components/Logo'
 import { useStyles } from './useStyles'
 import { useForm, Controller } from 'react-hook-form'
@@ -11,6 +10,7 @@ import { AppleLoginButton } from '@/components/AppleLoginButton'
 import { Link, router } from 'expo-router'
 import { supabase } from '@/lib/supabase'
 import { useLoadingStore } from '@/stores'
+import { CurvedBackground } from '@/components/CurvedBackground'
 
 export default function Welcome() {
   const styles = useStyles()
@@ -50,12 +50,8 @@ export default function Welcome() {
       <Logo />
 
       <View style={styles.bgContianer}>
-        <Image
-          source={require('@/assets/images/white-bg-cut.png')}
-          style={styles.whiteBgCut}
-          contentFit="contain"
-          cachePolicy="memory"
-        />
+        <CurvedBackground styles={styles.curvedBg} />
+        <View style={styles.whiteBgWrapper}></View>
 
         <Text style={styles.loginText}>Login</Text>
 

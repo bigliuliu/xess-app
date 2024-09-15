@@ -1,5 +1,5 @@
 import { Text, View, Pressable } from 'react-native'
-import { Link } from 'expo-router'
+import { Link, Redirect } from 'expo-router'
 import { useState } from 'react'
 import { Logo } from '@/components/Logo'
 import { useStyles } from './style'
@@ -11,7 +11,7 @@ export default function Welcome() {
   const styles = useStyles({ isStartButtonPress })
 
   // return <Redirect href="/system-info/1234" />
-  // return <Redirect href="/system-list" />
+  return <Redirect href="/login" />
 
   return (
     <View style={styles.rootContainer}>
