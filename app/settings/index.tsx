@@ -14,6 +14,9 @@ export default function Settings(props: PropsWithChildren<SettingsProps>) {
     const handleBack = () => {
         router.replace('/dashboard')
     }
+    const handleGoSupport = () => {
+        router.push('/settings/support')
+    }
     return (
         <View style={styles.rootContainer}>
             <Pressable style={styles.backButtonWrapper} onPress={handleBack}>
@@ -60,7 +63,7 @@ export default function Settings(props: PropsWithChildren<SettingsProps>) {
 
                         {/* Support */}
                         <DividerLine />
-                        <Pressable >
+                        <Pressable onPress={handleGoSupport}>
                             <View style={styles.listItemWrapper}>
                                 <Image
                                     source={require('@/assets/images/settings/Information-circle.png')}

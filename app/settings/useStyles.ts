@@ -123,7 +123,38 @@ export const useStyles = () => {
                 bottomText: {
                     color: '#DB2C2C',
                     fontSize: 14
-                }
+                },
+                // support
+                supportContent: {
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    position: 'relative'
+                },
+                supportButton: {
+                    width: 353,
+                    height: 52,
+                    borderRadius: 26,
+                    backgroundColor: '#000000',
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    position: 'absolute',
+                    bottom: 16 + safeAreaBottomHeight,
+                    zIndex: 3,
+                },
+                supportImg: {
+                    width: 420,
+                    height: 420
+                },
+                supportText: {
+                    color: '#ffffff',
+                    fontSize: 14,
+                    fontWeight: 500,
+                    marginLeft: 8,
+                },
 
             }),
         [safeAreaBottomHeight]
