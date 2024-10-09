@@ -56,7 +56,7 @@ export const useStyles = () => {
                     width: '100%',
                     fontWeight: 600,
                     lineHeight: 42,
-                    fontSize: 32,
+                    fontSize: 28,
                     color: '#000',
                     textAlign: 'left',
                     zIndex: 1,
@@ -155,7 +155,112 @@ export const useStyles = () => {
                     fontWeight: 500,
                     marginLeft: 8,
                 },
-
+                // password
+                formWrapper: {
+                    width: '100%',
+                    zIndex: 1,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                },
+                currentLabel: {
+                    width: 353,
+                    fontSize: 14,
+                    fontWeight: 500,
+                    marginBottom: 6,
+                    marginLeft: 6,
+                },
+                currentWrapper: {
+                    position: 'relative',
+                    marginBottom: 20
+                },
+                currentInput: {
+                    width: 353,
+                    height: 42,
+                    borderRadius: 21,
+                    borderColor: '#d8d8d8',
+                    display: 'flex',
+                    alignItems: 'center',
+                    borderWidth: 1,
+                    zIndex: 1,
+                    fontSize: 14,
+                    paddingLeft: 16,
+                    paddingRight: 16,
+                    color: '#b8b8b8',
+                },
+                currentEyeIcon: {
+                    position: 'absolute',
+                    right: 18,
+                    top: '30%',
+                    zIndex: 2
+                },
+                passwordLabel: {
+                    width: 353,
+                    fontSize: 14,
+                    marginBottom: 6,
+                    marginLeft: 6,
+                    marginTop: 20,
+                },
+                passwordLabelError: {
+                    color: '#fb923c',
+                },
+                passwordWrapper: {
+                    width: 353,
+                    height: 42,
+                    borderRadius: 21,
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    position: 'relative',
+                    paddingHorizontal: 16,
+                    zIndex: 1,
+                    borderColor: '#d8d8d8',
+                    borderWidth: 1,
+                },
+                passwordInput: {
+                    flex: 1,
+                    color: '#333',
+                    paddingRight: 10,
+                    fontSize: 14,
+                },
+                passwordInputError: {
+                    borderColor: '#fb923c',
+                },
+                eyeIcon: {
+                    zIndex: 2,
+                },
+                confirmPasswordLabel: {
+                    width: 353,
+                    fontSize: 14,
+                    marginBottom: 6,
+                    marginLeft: 6,
+                    marginTop: 20,
+                },
+                confirmPasswordLabelError: {
+                    color: '#fb923c',
+                },
+                confirmPasswordWrapper: {
+                    width: 353,
+                    height: 42,
+                    borderRadius: 21,
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    position: 'relative',
+                    paddingHorizontal: 16,
+                    zIndex: 1,
+                    borderColor: '#d8d8d8',
+                    borderWidth: 1,
+                },
+                confirmPasswordInput: {
+                    flex: 1,
+                    color: '#333',
+                    paddingRight: 10,
+                    fontSize: 14,
+                },
+                confirmPasswordInputError: {
+                    borderColor: '#fb923c',
+                }
             }),
         [safeAreaBottomHeight]
     )
