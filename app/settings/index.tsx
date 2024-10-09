@@ -91,7 +91,7 @@ export default function Settings(props: PropsWithChildren<SettingsProps>) {
                                     cachePolicy="memory"
                                 />
                                 <View style={styles.listItemTitleWrapper}>
-                                    <Text>Settings</Text>
+                                    <Text>Password</Text>
                                 </View>
                                 <Image
                                     source={require('@/assets/images/system-icons/right-arrow.png')}
@@ -113,7 +113,7 @@ export default function Settings(props: PropsWithChildren<SettingsProps>) {
                                     cachePolicy="memory"
                                 />
                                 <View style={styles.listItemTitleWrapper}>
-                                    <Text>Settings</Text>
+                                    <Text>UI Setting</Text>
                                 </View>
                                 <Image
                                     source={require('@/assets/images/system-icons/right-arrow.png')}
