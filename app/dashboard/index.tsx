@@ -9,7 +9,7 @@ import { router } from 'expo-router'
 import { DividerLine } from '@/components/DividerLine'
 import { CurvedBackground } from '@/components/CurvedBackground'
 
-export default function Dashboard({}: PropsWithChildren) {
+export default function Dashboard({ }: PropsWithChildren) {
   const styles = useStyles()
 
   const handleGotoNotification = () => {
@@ -20,6 +20,9 @@ export default function Dashboard({}: PropsWithChildren) {
   }
   const handleGotoEnergy = () => {
     router.push('/energy')
+  }
+  const handleGoSettings = () => {
+    router.push('/settings')
   }
 
   // clear all router history if possible
@@ -127,23 +130,26 @@ export default function Dashboard({}: PropsWithChildren) {
 
           {/* Settings */}
           <DividerLine />
-          <View style={styles.listItemWrapper}>
-            <Image
-              source={require('@/assets/images/system-icons/Setting.png')}
-              style={styles.systemListIcon}
-              contentFit="contain"
-              cachePolicy="memory"
-            />
-            <View style={styles.listItemTitleWrapper}>
-              <Text>Settings</Text>
+          <Pressable onPress={handleGoSettings}>
+            <View style={styles.listItemWrapper}>
+              <Image
+                source={require('@/assets/images/system-icons/Setting.png')}
+                style={styles.systemListIcon}
+                contentFit="contain"
+                cachePolicy="memory"
+              />
+              <View style={styles.listItemTitleWrapper}>
+                <Text>Settings</Text>
+              </View>
+              <Image
+                source={require('@/assets/images/system-icons/right-arrow.png')}
+                style={styles.rightArrow}
+                contentFit="contain"
+                cachePolicy="memory"
+              />
             </View>
-            <Image
-              source={require('@/assets/images/system-icons/right-arrow.png')}
-              style={styles.rightArrow}
-              contentFit="contain"
-              cachePolicy="memory"
-            />
-          </View>
+          </Pressable>
+
         </View>
       </View>
     </View>
