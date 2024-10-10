@@ -3,7 +3,6 @@ import { Image } from 'expo-image'
 import { useStyles } from './useStyles'
 import { PropsWithChildren } from 'react'
 import { router } from 'expo-router'
-import { LinearGradient } from 'expo-linear-gradient'
 import { DividerLine } from '@/components/DividerLine'
 import { CurvedBackground } from '@/components/CurvedBackground'
 interface SettingsProps { }
@@ -19,6 +18,9 @@ export default function Settings(props: PropsWithChildren<SettingsProps>) {
     }
     const handleGoPassword = () => {
         router.push('/settings/password')
+    }
+    const handleGoAccount = () => {
+        router.push('/settings/account')
     }
     return (
         <View style={styles.rootContainer}>
@@ -46,7 +48,7 @@ export default function Settings(props: PropsWithChildren<SettingsProps>) {
                     <View>
                         {/* Account */}
                         <DividerLine />
-                        <Pressable style={styles.listItemWrapper} >
+                        <Pressable style={styles.listItemWrapper} onPress={handleGoAccount}>
                             <Image
                                 source={require('@/assets/images/settings/Personaccount.png')}
                                 style={styles.systemListIcon}

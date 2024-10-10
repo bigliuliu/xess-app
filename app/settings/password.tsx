@@ -10,7 +10,7 @@ import Ionicons from '@expo/vector-icons/Ionicons'
 import { useLoadingStore } from '@/stores'
 interface PasswordProps { }
 
-export default function Settings(props: PropsWithChildren<PasswordProps>) {
+export default function Password(props: PropsWithChildren<PasswordProps>) {
     const styles = useStyles()
 
     const handleBack = () => {
@@ -22,6 +22,7 @@ export default function Settings(props: PropsWithChildren<PasswordProps>) {
         watch,
         control,
         handleSubmit,
+        getValues,
         formState: { errors },
     } = useForm()
     const [hidePass, setHidePass] = useState(true)
@@ -122,7 +123,7 @@ export default function Settings(props: PropsWithChildren<PasswordProps>) {
                                 )
                             }}
                             rules={{
-                                required: true,
+                                required: 'This field is required',
                                 minLength: {
                                     value: 6,
                                     message: 'Password must be at least 6 characters',
@@ -172,11 +173,10 @@ export default function Settings(props: PropsWithChildren<PasswordProps>) {
                                 )
                             }}
                             rules={{
-                                required: true,
-                                minLength: {
-                                    value: 6,
-                                    message: 'New password again must same as your new password',
-                                },
+                                required: 'This field is required',
+                                validate: (value) =>
+                                    value === getValues('password') || 'Passwords do not match your new password', // validate second password if match new password
+                                minLength: 6,
                             }}
                         />
                     </View>

@@ -6,7 +6,7 @@ import { router } from 'expo-router'
 import { CurvedBackground } from '@/components/CurvedBackground'
 interface SupportProps { }
 
-export default function Settings(props: PropsWithChildren<SupportProps>) {
+export default function Support(props: PropsWithChildren<SupportProps>) {
     const styles = useStyles()
 
     const handleBack = () => {

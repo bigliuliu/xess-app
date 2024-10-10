@@ -260,6 +260,96 @@ export const useStyles = () => {
                 },
                 confirmPasswordInputError: {
                     borderColor: '#fb923c',
+                },
+                // account
+                usernameLabel: {
+                    width: 353,
+                    fontSize: 14,
+                    marginBottom: 6,
+                    marginLeft: 6,
+                },
+                usernameError: {
+                    color: '#fb923c',
+                },
+                usernameInput: {
+                    width: 353,
+                    height: 42,
+                    borderRadius: 21,
+                    borderColor: '#d8d8d8',
+                    color: '#b8b8b8',
+                    display: 'flex',
+                    alignItems: 'center',
+                    borderWidth: 1,
+                    zIndex: 1,
+                    fontSize: 14,
+                    paddingLeft: 16,
+                    paddingRight: 16,
+                },
+                usernameInputError: {
+                    borderColor: '#fb923c',
+                },
+                emailLabel: {
+                    width: 353,
+                    fontSize: 14,
+                    marginBottom: 6,
+                    marginLeft: 6,
+                    marginTop: 20,
+                },
+                emailLabelError: {
+                    color: '#fb923c',
+                },
+                emailInput: {
+                    width: 353,
+                    height: 42,
+                    borderRadius: 21,
+                    borderColor: '#d8d8d8',
+                    color: '#b8b8b8',
+                    display: 'flex',
+                    alignItems: 'center',
+                    borderWidth: 1,
+                    zIndex: 1,
+                    fontSize: 14,
+                    paddingLeft: 16,
+                    paddingRight: 16,
+                },
+                emailInputError: {
+                    borderColor: '#fb923c',
+                },
+                birthLabel: {
+                    width: 353,
+                    fontSize: 14,
+                    marginBottom: 6,
+                    marginLeft: 6,
+                    marginTop: 20,
+                },
+                birthInput: {
+                    width: 353,
+                    height: 42,
+                    borderRadius: 21,
+                    borderColor: '#d8d8d8',
+                    color: '#b8b8b8',
+                    display: 'flex',
+                    alignItems: 'center',
+                    borderWidth: 1,
+                    zIndex: 1,
+                    fontSize: 14,
+                    paddingLeft: 16,
+                    paddingRight: 16,
+                },
+                birthInputError: {
+                    borderColor: '#fb923c',
+                },
+                inputWrapper: {
+                    position: 'relative'
+                },
+                inputIcon: {
+                    position: 'absolute',
+                    right: 0,
+                    top: '20%',
+                    marginRight: 15,
+                    width: 24,
+                    height: 24,
+                    zIndex: 2
                 }
             }),
         [safeAreaBottomHeight]
